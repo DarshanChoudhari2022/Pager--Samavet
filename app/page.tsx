@@ -244,38 +244,31 @@ export default function Home() {
         hero
           .fromTo(
             ".hero-title",
-            { opacity: 0, scale: 0.94 },
+            {
+              opacity: 0,
+              y: 54,
+              clipPath: "inset(0 0 100% 0)",
+            },
             {
               opacity: 1,
-              scale: 1,
-              duration: 0.12,
-              ease: "power2.out",
+              y: 0,
+              clipPath: "inset(0 0 0% 0)",
+              duration: 0.38,
+              ease: "power3.out",
             },
-            0.17,
-          )
-          .fromTo(
-            ".hero-title-line > span",
-            { yPercent: 120, opacity: 0 },
-            {
-              yPercent: 0,
-              opacity: 1,
-              duration: 0.24,
-              stagger: 0.075,
-              ease: "power4.out",
-            },
-            0.2,
+            0.14,
           )
           .fromTo(
             ".hero-intro",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.48,
+            0.53,
           )
           .fromTo(
             ".hero-actions",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.57,
+            0.62,
           )
           .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.06);
 

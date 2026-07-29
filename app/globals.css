@@ -311,16 +311,19 @@ h1 {
 }
 
 .hero-title {
+  position: relative;
+  z-index: 2;
+  width: min(650px, 48vw);
   margin-bottom: 27px;
   color: var(--logo-copper);
   font-family: var(--font-display), serif;
-  font-size: clamp(54px, 5.4vw, 88px);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 0.9;
+  font-size: clamp(52px, 5vw, 82px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
   opacity: 0;
   text-shadow: 0 8px 24px rgba(122, 62, 42, 0.1);
-  will-change: transform, opacity;
+  will-change: transform, opacity, clip-path;
 }
 
 .hero-title-line {
@@ -331,9 +334,8 @@ h1 {
 
 .hero-title-line > span {
   display: block;
-  opacity: 0;
-  transform: translateY(115%);
-  will-change: transform, opacity;
+  opacity: 1;
+  transform: none;
 }
 
 .hero-intro,
