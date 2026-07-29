@@ -313,29 +313,33 @@ h1 {
 .hero-title {
   position: relative;
   z-index: 2;
-  width: min(650px, 48vw);
-  margin-bottom: 27px;
+  width: min(720px, 50vw);
+  margin-bottom: 25px;
   color: var(--logo-copper);
   font-family: var(--font-display), serif;
-  font-size: clamp(52px, 5vw, 82px);
+  font-size: clamp(48px, 4.65vw, 76px);
   font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 0.88;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
   opacity: 0;
   text-shadow: 0 8px 24px rgba(122, 62, 42, 0.1);
-  will-change: transform, opacity, clip-path;
+  will-change: transform, opacity;
 }
 
 .hero-title-line {
   display: block;
-  overflow: hidden;
-  padding-right: 0.08em;
+  overflow: visible;
+  padding: 0 0.08em 0.07em 0;
 }
 
 .hero-title-line > span {
   display: block;
   opacity: 1;
   transform: none;
+}
+
+.hero-title-line + .hero-title-line {
+  margin-top: 0.03em;
 }
 
 .hero-intro,
@@ -1398,6 +1402,7 @@ footer {
 .motion-fallback .hero-kicker,
 .motion-fallback .hero-intro,
 .motion-fallback .hero-actions,
+.motion-fallback .hero-title,
 .motion-fallback .hero-title-line > span {
   opacity: 1;
   transform: none;
@@ -1520,9 +1525,9 @@ footer {
 
   .hero-title {
     width: min(92vw, 470px);
-    font-size: clamp(43px, 13vw, 64px);
-    letter-spacing: -0.035em;
-    line-height: 0.92;
+    font-size: clamp(38px, 11vw, 56px);
+    letter-spacing: -0.02em;
+    line-height: 1.14;
   }
 
   .hero-brand-logo-wrap {
@@ -1705,6 +1710,7 @@ footer {
   .hero-kicker,
   .hero-intro,
   .hero-actions,
+  .hero-title,
   .hero-title-line > span {
     opacity: 1;
     transform: none;

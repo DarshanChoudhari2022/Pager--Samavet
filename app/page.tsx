@@ -102,35 +102,6 @@ const tiers = [
   },
 ];
 
-function TreeMark() {
-  return (
-    <div className="tree-mark" aria-label="SAMAVET Tree of Life">
-      <span className="tree-trunk" />
-      <span className="tree-branch branch-a" />
-      <span className="tree-branch branch-b" />
-      <span className="tree-branch branch-c" />
-      {Array.from({ length: 9 }).map((_, index) => (
-        <i key={index} style={{ "--leaf": index } as React.CSSProperties} />
-      ))}
-    </div>
-  );
-}
-
-function GaneshaSeal() {
-  return (
-    <div className="ganesha" aria-label="Stylised Lord Ganesha illustration">
-      <span className="g-crown">◆</span>
-      <span className="g-ear g-ear-left" />
-      <span className="g-ear g-ear-right" />
-      <span className="g-face" />
-      <span className="g-eye g-eye-left" />
-      <span className="g-eye g-eye-right" />
-      <span className="g-trunk" />
-      <span className="g-hand">●</span>
-    </div>
-  );
-}
-
 export default function Home() {
   useEffect(() => {
     let disposed = false;
@@ -246,15 +217,13 @@ export default function Home() {
             ".hero-title",
             {
               opacity: 0,
-              y: 54,
-              clipPath: "inset(0 0 100% 0)",
+              y: 36,
             },
             {
               opacity: 1,
               y: 0,
-              clipPath: "inset(0 0 0% 0)",
-              duration: 0.38,
-              ease: "power3.out",
+              duration: 0.42,
+              ease: "power2.out",
             },
             0.14,
           )
@@ -286,23 +255,6 @@ export default function Home() {
             },
           });
         });
-
-        gsap.fromTo(
-          ".reveal-stage",
-          { opacity: 0, y: 70, scale: 0.9 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: ".origin-section",
-              start: "top 72%",
-              toggleActions: "play none none reverse",
-            },
-          },
-        );
 
         gsap.utils.toArray(".module-card").forEach((card) => {
           gsap.fromTo(
@@ -443,37 +395,6 @@ export default function Home() {
             <span />
             Scroll to enter
           </div>
-        </div>
-      </section>
-
-      <section className="origin-section">
-        <div className="section-count">01 — Our purpose</div>
-        <div className="temple-silhouette" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-        <div className="reveal-stage">
-          <GaneshaSeal />
-          <div className="origin-copy">
-            <p className="eyebrow">Rooted in seva. Designed for scale.</p>
-            <h2>
-              Tradition, meet
-              <br />
-              <em>tomorrow.</em>
-            </h2>
-            <p>
-              SAMAVET means assembled—people, purpose and progress in one
-              place. We make powerful technology feel natural for every
-              community organisation.
-            </p>
-          </div>
-          <TreeMark />
-        </div>
-        <div className="garland" aria-hidden="true">
-          {Array.from({ length: 22 }).map((_, index) => (
-            <i key={index} />
-          ))}
         </div>
       </section>
 
