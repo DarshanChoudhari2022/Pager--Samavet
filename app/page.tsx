@@ -486,39 +486,27 @@ export default function Home() {
       </section>
 
       <footer id="contact">
-        <div className="footer-orbit" />
-        <div className="footer-top">
-          <p className="eyebrow">Let&apos;s build belonging, together</p>
-          <h2>
-            Your community&apos;s next
-            <br />
-            chapter starts <em>here.</em>
-          </h2>
-          <a className="footer-button" href="tel:+919172227878">
-            Speak with SAMAVET <span>↗</span>
+        <div className="footer-signature">
+          <img
+            className="footer-watermark"
+            src="/assets/samavet-logo-transparent.png"
+            alt=""
+            aria-hidden="true"
+          />
+          <a className="footer-wordmark" href="#top" aria-label="Back to SAMAVET home">
+            SAMAVET
           </a>
         </div>
-        <div className="footer-bottom">
-          <a className="brand footer-brand" href="#top">
-            <span className="brand-mark">S</span>
-            <span>SAMAVET</span>
+        <div className="footer-meta">
+          <p>© 2026 Samavet.</p>
+          <p>Built with communities in mind.</p>
+          <a
+            href="https://www.bracketdex.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Powered by BracketDex
           </a>
-          <div className="contact-links">
-            <a href="tel:+919172227878">+91 917-222-7878</a>
-            <a href="https://www.samavet.in">www.samavet.in</a>
-          </div>
-          <div className="social-links">
-            <a href="https://www.instagram.com/" aria-label="Instagram">
-              Instagram
-            </a>
-            <a href="https://www.facebook.com/" aria-label="Facebook">
-              Facebook
-            </a>
-            <a href="https://www.youtube.com/" aria-label="YouTube">
-              YouTube
-            </a>
-          </div>
-          <p>© 2026 SAMAVET. Made with seva in India.</p>
         </div>
       </footer>
     </main>
