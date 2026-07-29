@@ -171,23 +171,38 @@ export default function Home() {
       ).matches;
 
       if (!reduced) {
+        const brandVideo =
+          document.querySelector<HTMLVideoElement>(".hero-brand-video");
         const hero = gsap.timeline({
           scrollTrigger: {
             trigger: ".hero",
             start: "top top",
-            end: "+=160%",
+            end: "+=190%",
             scrub: 1,
             pin: true,
+            onUpdate: (self: { progress: number }) => {
+              if (
+                brandVideo &&
+                brandVideo.readyState >= 1 &&
+                Number.isFinite(brandVideo.duration)
+              ) {
+                const videoProgress = Math.min(self.progress / 0.31, 1);
+                brandVideo.currentTime =
+                  videoProgress * Math.max(brandVideo.duration - 0.04, 0);
+              }
+            },
           },
         });
         const loaderLogo = document.querySelector<HTMLElement>(
-          ".hero-logo-loader-wrap",
+          ".hero-brand-video-wrap",
         );
         const headerLogo = document.querySelector<HTMLElement>(".top-logo");
+        const headerBar = document.querySelector<HTMLElement>(".topbar");
 
         if (loaderLogo && headerLogo) {
           const loaderRect = loaderLogo.getBoundingClientRect();
           const headerRect = headerLogo.getBoundingClientRect();
+          const headerHeight = headerBar?.getBoundingClientRect().height || 0;
           const logoScale = headerRect.width / loaderRect.width;
           const logoX =
             headerRect.left +
@@ -195,26 +210,37 @@ export default function Home() {
             (loaderRect.left + loaderRect.width / 2);
           const logoY =
             headerRect.top +
+            headerHeight +
             headerRect.height / 2 -
             (loaderRect.top + loaderRect.height / 2);
 
           hero
             .to(
-              ".hero-logo-loader-wrap",
+              ".hero-brand-video-wrap",
               {
                 x: logoX,
                 y: logoY,
                 scale: logoScale,
                 ease: "power2.inOut",
-                duration: 0.3,
+                duration: 0.2,
               },
-              0,
+              0.29,
             )
-            .to(".top-logo", { opacity: 1, duration: 0.06 }, 0.25)
             .to(
-              ".hero-logo-loader-wrap",
-              { opacity: 0, duration: 0.06 },
-              0.26,
+              ".topbar",
+              {
+                opacity: 1,
+                yPercent: 0,
+                pointerEvents: "auto",
+                duration: 0.14,
+                ease: "power2.out",
+              },
+              0.41,
+            )
+            .to(
+              ".hero-brand-video-wrap",
+              { opacity: 0, duration: 0.07 },
+              0.47,
             );
         }
 
@@ -223,7 +249,7 @@ export default function Home() {
             ".hero-kicker",
             { opacity: 0, y: 18 },
             { opacity: 1, y: 0, duration: 0.12, ease: "power2.out" },
-            0.26,
+            0.52,
           )
           .fromTo(
             ".hero-title-line > span",
@@ -235,21 +261,21 @@ export default function Home() {
               stagger: 0.1,
               ease: "power3.out",
             },
-            0.32,
+            0.57,
           )
           .fromTo(
             ".hero-intro",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.64,
+            0.76,
           )
           .fromTo(
             ".hero-actions",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.76,
+            0.86,
           )
-          .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.08);
+          .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.06);
 
         gsap.utils.toArray("[data-speed]").forEach((element) => {
           const speed = Number((element as HTMLElement).dataset.speed || 0.4);
@@ -373,12 +399,14 @@ export default function Home() {
             alt="Ganesh Utsav procession with devotees welcoming Lord Ganesha"
           />
           <div className="utsav-image-shade" aria-hidden="true" />
-          <div className="hero-logo-loader-wrap" aria-hidden="true">
-            <span className="logo-loader-ring" />
-            <img
-              className="hero-logo-loader"
-              src="/assets/samavet-attached-logo.jpeg"
-              alt=""
+          <div className="hero-brand-video-wrap" aria-hidden="true">
+            <video
+              className="hero-brand-video"
+              src="/assets/samavet-logo-explode.mp4"
+              poster="/assets/samavet-attached-logo.jpeg"
+              muted
+              playsInline
+              preload="auto"
             />
           </div>
           <div className="hero-copy">

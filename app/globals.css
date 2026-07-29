@@ -61,7 +61,11 @@ a {
   border-bottom: 1px solid rgba(197, 155, 39, 0.2);
   background: rgba(253, 251, 247, 0.78);
   color: var(--brown);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
   backdrop-filter: blur(18px);
+  will-change: transform, opacity;
 }
 
 .top-logo-link {
@@ -74,7 +78,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  opacity: 0;
+  opacity: 1;
 }
 
 .brand {
@@ -184,20 +188,24 @@ a {
   opacity: 1;
 }
 
-.hero-logo-loader-wrap {
+.hero-brand-video-wrap {
   position: absolute;
   z-index: 6;
-  top: calc(50% - 72px);
-  left: 16vw;
-  width: 190px;
-  height: 190px;
+  top: calc(50% - 150px);
+  left: 10vw;
+  width: min(340px, 30vw);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgba(164, 93, 59, 0.16);
+  border-radius: 24px;
+  background: var(--cream);
+  box-shadow: 0 30px 80px rgba(122, 62, 42, 0.12);
   transform-origin: center;
   will-change: transform, opacity;
 }
 
-.hero-logo-loader {
-  position: relative;
-  z-index: 2;
+.hero-brand-video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1322,11 +1330,13 @@ footer {
   opacity: 1;
 }
 
-.motion-fallback .top-logo {
+.motion-fallback .topbar {
   opacity: 1;
+  pointer-events: auto;
+  transform: none;
 }
 
-.motion-fallback .hero-logo-loader-wrap {
+.motion-fallback .hero-brand-video-wrap {
   display: none;
 }
 
@@ -1434,11 +1444,10 @@ footer {
     line-height: 0.9;
   }
 
-  .hero-logo-loader-wrap {
-    top: 32%;
+  .hero-brand-video-wrap {
+    top: 26%;
     left: 22px;
-    width: 145px;
-    height: 145px;
+    width: 170px;
   }
 
   .utsav-backdrop {
@@ -1601,7 +1610,13 @@ footer {
     opacity: 1;
   }
 
-  .hero-logo-loader-wrap {
+  .topbar {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .hero-brand-video-wrap {
     display: none;
   }
 
