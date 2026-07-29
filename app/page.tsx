@@ -175,7 +175,7 @@ export default function Home() {
           scrollTrigger: {
             trigger: ".hero",
             start: "top top",
-            end: "+=190%",
+            end: "+=160%",
             scrub: 1,
             pin: true,
           },
@@ -200,34 +200,20 @@ export default function Home() {
             headerHeight +
             headerRect.height / 2 -
             (loaderRect.top + loaderRect.height / 2);
-          const downX = Math.min(window.innerWidth * 0.08, 140);
-          const downY = Math.min(window.innerHeight * 0.36, 340);
 
           hero
             .fromTo(
               ".hero-brand-logo-wrap",
               { x: 0, y: 0, scale: 1, rotate: 0, opacity: 1 },
               {
-                x: downX,
-                y: downY,
-                scale: 2.25,
-                rotate: 1.5,
-                duration: 0.34,
-                ease: "power2.inOut",
-              },
-              0,
-            )
-            .to(
-              ".hero-brand-logo-wrap",
-              {
                 x: logoX,
                 y: logoY,
                 scale: logoScale,
-                rotate: -2,
-                ease: "power2.inOut",
-                duration: 0.32,
+                rotate: -1,
+                ease: "power3.inOut",
+                duration: 0.5,
               },
-              0.35,
+              0,
             )
             .to(
               ".topbar",
@@ -238,22 +224,16 @@ export default function Home() {
                 duration: 0.14,
                 ease: "power2.out",
               },
-              0.63,
+              0.44,
             )
             .to(
               ".hero-brand-logo-wrap",
               { opacity: 0, duration: 0.07 },
-              0.67,
+              0.49,
             );
         }
 
         hero
-          .fromTo(
-            ".hero-kicker",
-            { opacity: 0, y: 18 },
-            { opacity: 1, y: 0, duration: 0.12, ease: "power2.out" },
-            0.39,
-          )
           .fromTo(
             ".hero-title-line > span",
             { yPercent: 115, opacity: 0 },
@@ -264,19 +244,19 @@ export default function Home() {
               stagger: 0.1,
               ease: "power3.out",
             },
-            0.43,
+            0.1,
           )
           .fromTo(
             ".hero-intro",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.64,
+            0.38,
           )
           .fromTo(
             ".hero-actions",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.73,
+            0.51,
           )
           .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.06);
 
