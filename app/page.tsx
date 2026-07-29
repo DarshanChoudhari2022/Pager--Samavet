@@ -202,6 +202,30 @@ export default function Home() {
             (loaderRect.top + loaderRect.height / 2);
 
           hero
+            .fromTo(
+              ".brand-fragment",
+              {
+                x: (index: number) =>
+                  [-150, 110, -90, 135, -105, 95][index] || 0,
+                y: (index: number) =>
+                  [-90, 70, -45, 55, -60, 90][index] || 0,
+                rotate: (index: number) =>
+                  [-14, 11, -8, 12, -10, 8][index] || 0,
+                scale: 0.88,
+                opacity: 0,
+              },
+              {
+                x: 0,
+                y: 0,
+                rotate: 0,
+                scale: 1,
+                opacity: 1,
+                duration: 0.24,
+                stagger: 0.025,
+                ease: "power3.out",
+              },
+              0,
+            )
             .to(
               ".hero-brand-logo-wrap",
               {
@@ -210,9 +234,9 @@ export default function Home() {
                 scale: logoScale,
                 rotate: -2,
                 ease: "power2.inOut",
-                duration: 0.28,
+                duration: 0.27,
               },
-              0.12,
+              0.24,
             )
             .to(
               ".topbar",
@@ -223,12 +247,12 @@ export default function Home() {
                 duration: 0.14,
                 ease: "power2.out",
               },
-              0.41,
+              0.48,
             )
             .to(
               ".hero-brand-logo-wrap",
               { opacity: 0, duration: 0.07 },
-              0.47,
+              0.51,
             );
         }
 
@@ -237,7 +261,7 @@ export default function Home() {
             ".hero-kicker",
             { opacity: 0, y: 18 },
             { opacity: 1, y: 0, duration: 0.12, ease: "power2.out" },
-            0.52,
+            0.25,
           )
           .fromTo(
             ".hero-title-line > span",
@@ -249,19 +273,19 @@ export default function Home() {
               stagger: 0.1,
               ease: "power3.out",
             },
-            0.57,
+            0.3,
           )
           .fromTo(
             ".hero-intro",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.76,
+            0.5,
           )
           .fromTo(
             ".hero-actions",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.86,
+            0.61,
           )
           .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.06);
 
@@ -365,7 +389,7 @@ export default function Home() {
         <a className="top-logo-link" href="#top" aria-label="SAMAVET home">
           <img
             className="top-logo"
-            src="/assets/samavet-attached-logo.jpeg"
+            src="/assets/samavet-logo-transparent.png"
             alt="SAMAVET community tree logo"
           />
         </a>
@@ -388,11 +412,14 @@ export default function Home() {
           />
           <div className="utsav-image-shade" aria-hidden="true" />
           <div className="hero-brand-logo-wrap" aria-hidden="true">
-            <img
-              className="hero-brand-logo"
-              src="/assets/samavet-attached-logo.jpeg"
-              alt=""
-            />
+            {Array.from({ length: 6 }).map((_, index) => (
+              <img
+                className={`brand-fragment brand-fragment-${index + 1}`}
+                src="/assets/samavet-logo-transparent.png"
+                alt=""
+                key={index}
+              />
+            ))}
           </div>
           <div className="hero-copy">
             <p className="eyebrow hero-kicker">SAMAVET presents</p>
