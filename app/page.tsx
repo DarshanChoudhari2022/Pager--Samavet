@@ -171,8 +171,6 @@ export default function Home() {
       ).matches;
 
       if (!reduced) {
-        const brandVideo =
-          document.querySelector<HTMLVideoElement>(".hero-brand-video");
         const hero = gsap.timeline({
           scrollTrigger: {
             trigger: ".hero",
@@ -180,21 +178,10 @@ export default function Home() {
             end: "+=190%",
             scrub: 1,
             pin: true,
-            onUpdate: (self: { progress: number }) => {
-              if (
-                brandVideo &&
-                brandVideo.readyState >= 1 &&
-                Number.isFinite(brandVideo.duration)
-              ) {
-                const videoProgress = Math.min(self.progress / 0.31, 1);
-                brandVideo.currentTime =
-                  videoProgress * Math.max(brandVideo.duration - 0.04, 0);
-              }
-            },
           },
         });
         const loaderLogo = document.querySelector<HTMLElement>(
-          ".hero-brand-video-wrap",
+          ".hero-brand-logo-wrap",
         );
         const headerLogo = document.querySelector<HTMLElement>(".top-logo");
         const headerBar = document.querySelector<HTMLElement>(".topbar");
@@ -216,15 +203,16 @@ export default function Home() {
 
           hero
             .to(
-              ".hero-brand-video-wrap",
+              ".hero-brand-logo-wrap",
               {
                 x: logoX,
                 y: logoY,
                 scale: logoScale,
+                rotate: -2,
                 ease: "power2.inOut",
-                duration: 0.2,
+                duration: 0.28,
               },
-              0.29,
+              0.12,
             )
             .to(
               ".topbar",
@@ -238,7 +226,7 @@ export default function Home() {
               0.41,
             )
             .to(
-              ".hero-brand-video-wrap",
+              ".hero-brand-logo-wrap",
               { opacity: 0, duration: 0.07 },
               0.47,
             );
@@ -399,14 +387,11 @@ export default function Home() {
             alt="Ganesh Utsav procession with devotees welcoming Lord Ganesha"
           />
           <div className="utsav-image-shade" aria-hidden="true" />
-          <div className="hero-brand-video-wrap" aria-hidden="true">
-            <video
-              className="hero-brand-video"
-              src="/assets/samavet-logo-explode.mp4"
-              poster="/assets/samavet-attached-logo.jpeg"
-              muted
-              playsInline
-              preload="auto"
+          <div className="hero-brand-logo-wrap" aria-hidden="true">
+            <img
+              className="hero-brand-logo"
+              src="/assets/samavet-attached-logo.jpeg"
+              alt=""
             />
           </div>
           <div className="hero-copy">
