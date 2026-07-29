@@ -430,7 +430,7 @@ export default function Home() {
                 <span>Ganesh Utsav</span>
               </span>
               <span className="hero-title-line">
-                <span>2026.</span>
+                <span>2026..</span>
               </span>
             </h1>
             <p className="hero-intro">
