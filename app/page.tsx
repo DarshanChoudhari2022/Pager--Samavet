@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 declare global {
   interface Window {
@@ -39,10 +39,19 @@ declare global {
 const modules = [
   {
     number: "01",
-    title: "Digital Donation Receipts",
+    title: "Digital Vargani Slips",
     tag: "ePawati",
-    copy: "Issue compliant, beautifully branded receipts in seconds—with donor records always ready.",
+    copy: "Create your familiar Vargani slip digitally and send the same branded receipt to every donor on WhatsApp.",
     icon: "₹",
+    headline: "Every collection, recorded and shared instantly.",
+    description:
+      "Share your existing Vargani slip template with us, or let our team design one for your mandal. We upload the approved design into SAMAVET. When a member collects a donation, they enter the donor and payment details once; the matching branded receipt is generated and sent directly to the donor on WhatsApp.",
+    benefits: [
+      "Quick onboarding with your current slip design",
+      "No duplicate handwriting or manual receipt registers",
+      "Member-wise collection and pending-payment visibility",
+      "Searchable records with instant WhatsApp sharing",
+    ],
   },
   {
     number: "02",
@@ -50,6 +59,15 @@ const modules = [
     tag: "Live Analytics",
     copy: "See registrations, attendance, donations and reach through one clear real-time view.",
     icon: "↗",
+    headline: "See the gathering as it happens.",
+    description:
+      "Follow registrations, live attendance, collections and activity from one clear dashboard. Organizers can understand what is happening now, spot gaps early and make informed decisions while the event is active.",
+    benefits: [
+      "Live headcount and registration overview",
+      "Collection, expense and balance summaries",
+      "Location-wise and member-wise insights",
+      "Clear reports for post-event review",
+    ],
   },
   {
     number: "03",
@@ -57,6 +75,15 @@ const modules = [
     tag: "Facebook & YouTube",
     copy: "Bring every aarti, utsav and community moment to devotees wherever they are.",
     icon: "◉",
+    headline: "Bring every sacred moment closer.",
+    description:
+      "Broadcast aarti, processions, cultural programs and announcements to devotees on Facebook and YouTube. SAMAVET helps your team prepare, schedule and manage the stream without adding technical complexity for mandal volunteers.",
+    benefits: [
+      "Facebook and YouTube live-stream support",
+      "Event scheduling and broadcast preparation",
+      "A single viewing experience for remote devotees",
+      "Recorded streams ready for future sharing",
+    ],
   },
   {
     number: "04",
@@ -64,10 +91,21 @@ const modules = [
     tag: "Production Studio",
     copy: "Turn stories, teachings and community voices into thoughtful, broadcast-ready media.",
     icon: "≋",
+    headline: "Give your community stories a lasting voice.",
+    description:
+      "From interviews and festival updates to devotional conversations, we help shape, record and publish media that feels authentic to your organization and is ready for today’s digital channels.",
+    benefits: [
+      "Topic planning and production guidance",
+      "Recording, editing and clean audio delivery",
+      "Short-form clips for social platforms",
+      "Publishing support for consistent reach",
+    ],
   },
 ];
 
 export default function Home() {
+  const [activeModule, setActiveModule] = useState(0);
+
   useEffect(() => {
     let disposed = false;
 
@@ -301,7 +339,7 @@ export default function Home() {
           <span aria-hidden="true">/</span>
           <a href="#platform">Services</a>
           <span aria-hidden="true">/</span>
-          <a href="#contact">Contact</a>
+          <a href="/contact">Contact</a>
         </div>
         <div className="nav-actions">
           <span className="language-switcher">EN <i>/</i> मराठी</span>
@@ -379,8 +417,11 @@ export default function Home() {
           </p>
         </div>
         <div className="module-grid">
-          {modules.map((module) => (
-            <article className="module-card" key={module.number}>
+          {modules.map((module, index) => (
+            <article
+              className={`module-card ${activeModule === index ? "active" : ""}`}
+              key={module.number}
+            >
               <div className="module-top">
                 <span>{module.number}</span>
                 <i>{module.icon}</i>
@@ -388,11 +429,86 @@ export default function Home() {
               <p className="module-tag">{module.tag}</p>
               <h3>{module.title}</h3>
               <p>{module.copy}</p>
-              <a href="#contact" aria-label={`Learn about ${module.title}`}>
-                Discover module <span>↗</span>
-              </a>
+              <button
+                type="button"
+                onClick={() => setActiveModule(index)}
+                aria-controls="service-detail"
+                aria-expanded={activeModule === index}
+              >
+                View details <span>↘</span>
+              </button>
             </article>
           ))}
+        </div>
+        <div className="service-detail" id="service-detail" aria-live="polite">
+          <div className="service-detail-copy">
+            <p className="service-detail-label">
+              {modules[activeModule].tag} · {modules[activeModule].number}
+            </p>
+            <h3>{modules[activeModule].headline}</h3>
+            <p>{modules[activeModule].description}</p>
+            <ul>
+              {modules[activeModule].benefits.map((benefit) => (
+                <li key={benefit}>
+                  <span>✓</span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+            <a className="service-contact" href="/contact">
+              Talk to our team <span>↗</span>
+            </a>
+          </div>
+          {activeModule === 0 ? (
+            <div className="vargani-gallery" aria-label="Vargani slip template examples">
+              {[
+                "/assets/vargani-template-1.jpeg",
+                "/assets/vargani-template-2.jpeg",
+                "/assets/vargani-template-3.jpeg",
+              ].map((src, index) => (
+                <figure key={src}>
+                  <img src={src} alt={`Custom Vargani receipt template example ${index + 1}`} />
+                  <figcaption>Template {String(index + 1).padStart(2, "0")}</figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : (
+            <div className={`service-visual service-visual-${activeModule}`}>
+              <div className="service-visual-top">
+                <span>{modules[activeModule].tag}</span>
+                <b>LIVE</b>
+              </div>
+              <div className="service-metrics">
+                <div>
+                  <strong>{activeModule === 1 ? "1,284" : activeModule === 2 ? "2" : "24"}</strong>
+                  <span>
+                    {activeModule === 1
+                      ? "participants"
+                      : activeModule === 2
+                        ? "live channels"
+                        : "media stories"}
+                  </span>
+                </div>
+                <div>
+                  <strong>{activeModule === 1 ? "74%" : activeModule === 2 ? "LIVE" : "4×"}</strong>
+                  <span>
+                    {activeModule === 1
+                      ? "active zones"
+                      : activeModule === 2
+                        ? "broadcast ready"
+                        : "more reusable content"}
+                  </span>
+                </div>
+              </div>
+              <div className="service-bars" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+              </div>
+            </div>
+          )}
         </div>
         <div className="who-row">
           <span>Built alongside</span>
