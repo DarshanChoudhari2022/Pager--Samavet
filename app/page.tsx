@@ -67,41 +67,6 @@ const modules = [
   },
 ];
 
-const tiers = [
-  {
-    name: "Bhakt",
-    eyebrow: "For emerging communities",
-    price: "₹2,999",
-    cadence: "/ month",
-    features: ["Digital ePawati", "Member directory", "2 campaign pages"],
-  },
-  {
-    name: "Utsav",
-    eyebrow: "For active organisations",
-    price: "₹7,999",
-    cadence: "/ month",
-    features: [
-      "Everything in Bhakt",
-      "Live event analytics",
-      "Social live streaming",
-      "Priority support",
-    ],
-    featured: true,
-  },
-  {
-    name: "Mandap",
-    eyebrow: "For large-scale impact",
-    price: "Custom",
-    cadence: "built around you",
-    features: [
-      "Everything in Utsav",
-      "Multi-location access",
-      "Media production",
-      "Dedicated success lead",
-    ],
-  },
-];
-
 export default function Home() {
   useEffect(() => {
     let disposed = false;
@@ -517,46 +482,6 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="pricing-section" id="pricing">
-        <div className="section-heading pricing-heading">
-          <div>
-            <p className="eyebrow">Plans that grow with your purpose</p>
-            <h2>
-              Start where you are.
-              <br />
-              <em>Grow without limits.</em>
-            </h2>
-          </div>
-          <p>Simple monthly plans. Thoughtful onboarding included.</p>
-        </div>
-        <div className="pricing-grid">
-          {tiers.map((tier) => (
-            <article
-              className={`price-card ${tier.featured ? "featured" : ""}`}
-              key={tier.name}
-            >
-              {tier.featured && <span className="popular">Most loved</span>}
-              <p>{tier.eyebrow}</p>
-              <h3>{tier.name}</h3>
-              <div className="price">
-                <b>{tier.price}</b>
-                <span>{tier.cadence}</span>
-              </div>
-              <ul>
-                {tier.features.map((feature) => (
-                  <li key={feature}>
-                    <span>✓</span> {feature}
-                  </li>
-                ))}
-              </ul>
-              <a href="#contact">
-                Choose {tier.name} <span>↗</span>
-              </a>
-            </article>
-          ))}
         </div>
       </section>
 
