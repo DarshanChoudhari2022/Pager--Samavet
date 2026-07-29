@@ -189,17 +189,20 @@ export default function Home() {
         if (loaderLogo && headerLogo) {
           const loaderRect = loaderLogo.getBoundingClientRect();
           const headerRect = headerLogo.getBoundingClientRect();
-          const headerHeight = headerBar?.getBoundingClientRect().height || 0;
+          const headerStyles = headerBar
+            ? window.getComputedStyle(headerBar)
+            : null;
+          const headerTargetY =
+            Number.parseFloat(headerStyles?.top || "0") +
+            Number.parseFloat(headerStyles?.paddingTop || "0") +
+            headerLogo.offsetHeight / 2;
           const logoScale = headerRect.width / loaderRect.width;
           const logoX =
             headerRect.left +
             headerRect.width / 2 -
             (loaderRect.left + loaderRect.width / 2);
           const logoY =
-            headerRect.top +
-            headerHeight +
-            headerRect.height / 2 -
-            (loaderRect.top + loaderRect.height / 2);
+            headerTargetY - (loaderRect.top + loaderRect.height / 2);
 
           hero
             .fromTo(
@@ -211,52 +214,68 @@ export default function Home() {
                 scale: logoScale,
                 rotate: -1,
                 ease: "power3.inOut",
-                duration: 0.5,
+                duration: 0.58,
               },
               0,
             )
-            .to(
+            .fromTo(
               ".topbar",
               {
+                opacity: 0,
+                y: -140,
+                pointerEvents: "none",
+              },
+              {
                 opacity: 1,
-                yPercent: 0,
+                y: 0,
                 pointerEvents: "auto",
-                duration: 0.14,
+                duration: 0.16,
                 ease: "power2.out",
               },
-              0.44,
+              0.5,
             )
             .to(
               ".hero-brand-logo-wrap",
-              { opacity: 0, duration: 0.07 },
-              0.49,
+              { opacity: 0, duration: 0.08 },
+              0.55,
             );
         }
 
         hero
           .fromTo(
+            ".hero-title",
+            { opacity: 0, scale: 0.94 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.12,
+              ease: "power2.out",
+            },
+            0.17,
+          )
+          .fromTo(
             ".hero-title-line > span",
-            { yPercent: 115, opacity: 0 },
+            { yPercent: 120, opacity: 0 },
             {
               yPercent: 0,
               opacity: 1,
-              duration: 0.22,
-              stagger: 0.1,
-              ease: "power3.out",
+              duration: 0.24,
+              stagger: 0.075,
+              ease: "power4.out",
             },
-            0.1,
+            0.2,
           )
           .fromTo(
             ".hero-intro",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.38,
+            0.48,
           )
           .fromTo(
             ".hero-actions",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.51,
+            0.57,
           )
           .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.06);
 
@@ -357,21 +376,33 @@ export default function Home() {
   return (
     <main>
       <nav className="topbar" aria-label="Primary navigation">
-        <a className="top-logo-link" href="#top" aria-label="SAMAVET home">
-          <img
-            className="top-logo"
-            src="/assets/samavet-logo-transparent.png"
-            alt="SAMAVET community tree logo"
-          />
+        <a className="top-brand" href="#top" aria-label="SAMAVET home">
+          <span className="top-logo-link">
+            <img
+              className="top-logo"
+              src="/assets/samavet-logo-transparent.png"
+              alt="SAMAVET community tree logo"
+            />
+          </span>
+          <span className="top-brand-name">SAMAVET</span>
         </a>
         <div className="nav-links">
-          <a href="#platform">Platform</a>
-          <a href="#experience">Experience</a>
-          <a href="#pricing">Pricing</a>
+          <a href="https://epawati.samavet.in/">ePawati</a>
+          <span aria-hidden="true">/</span>
+          <a href="#platform">Services</a>
+          <span aria-hidden="true">/</span>
+          <a href="#contact">Contact</a>
         </div>
-        <a className="nav-cta" href="#contact">
-          Begin a conversation <span>↗</span>
-        </a>
+        <div className="nav-actions">
+          <span className="language-switcher">EN <i>/</i> मराठी</span>
+          <a
+            className="nav-cta"
+            href="https://epawati.samavet.in/"
+            aria-label="Log in to the SAMAVET ePawati portal"
+          >
+            Portal login
+          </a>
+        </div>
       </nav>
 
       <section className="hero" id="top">
