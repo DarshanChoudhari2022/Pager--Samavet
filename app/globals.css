@@ -55,9 +55,24 @@ a {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   width: 100%;
-  padding: 24px 4vw;
-  color: var(--cream);
-  mix-blend-mode: difference;
+  min-height: 98px;
+  padding: 9px 4vw;
+  border-bottom: 1px solid rgba(197, 155, 39, 0.2);
+  background: rgba(253, 251, 247, 0.78);
+  color: var(--brown);
+  backdrop-filter: blur(18px);
+}
+
+.top-logo-link {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+.top-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand {
@@ -131,19 +146,46 @@ a {
   position: absolute;
   inset: 0;
   display: grid;
-  place-items: center;
+  place-items: center start;
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 48%, rgba(197, 155, 39, 0.14), transparent 26%),
     var(--cream);
 }
 
+.utsav-backdrop {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+.utsav-image-shade {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(253, 251, 247, 0.98) 0%,
+    rgba(253, 251, 247, 0.92) 34%,
+    rgba(253, 251, 247, 0.35) 52%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
 .hero-copy {
   position: relative;
   z-index: 4;
-  width: min(940px, 88vw);
-  text-align: center;
-  opacity: 0;
+  width: min(720px, 52vw);
+  margin-left: 6vw;
+  padding-top: 42px;
+  text-align: left;
+  opacity: 1;
 }
 
 .eyebrow {
@@ -171,8 +213,8 @@ h2 {
 
 h1 {
   margin-bottom: 24px;
-  font-size: clamp(72px, 10.2vw, 154px);
-  line-height: 0.76;
+  font-size: clamp(66px, 7.8vw, 124px);
+  line-height: 0.78;
 }
 
 h1 em,
@@ -183,7 +225,7 @@ h2 em {
 
 .hero-intro {
   width: min(570px, 88%);
-  margin: 34px auto;
+  margin: 34px 0;
   color: rgba(44, 24, 16, 0.7);
   font-size: 14px;
   line-height: 1.8;
@@ -191,7 +233,7 @@ h2 em {
 
 .hero-actions {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 30px;
   margin-top: 38px;
@@ -316,7 +358,8 @@ h2 em {
   position: absolute;
   z-index: 2;
   inset: 0;
-  opacity: 0;
+  opacity: 0.25;
+  pointer-events: none;
 }
 
 .diya {
@@ -1210,11 +1253,17 @@ footer {
 @media (max-width: 960px) {
   .topbar {
     grid-template-columns: 1fr auto;
-    padding: 19px 22px;
+    min-height: 82px;
+    padding: 7px 22px;
   }
 
   .nav-links {
     display: none;
+  }
+
+  .top-logo-link {
+    width: 68px;
+    height: 68px;
   }
 
   h1 {
@@ -1269,7 +1318,8 @@ footer {
 
 @media (max-width: 680px) {
   .topbar {
-    mix-blend-mode: difference;
+    background: rgba(253, 251, 247, 0.88);
+    mix-blend-mode: normal;
   }
 
   .nav-cta {
@@ -1281,12 +1331,35 @@ footer {
   }
 
   .hero-copy {
-    width: 92vw;
+    width: calc(100vw - 44px);
+    margin-left: 22px;
+    padding-top: 62px;
   }
 
   h1 {
-    font-size: clamp(58px, 19vw, 88px);
+    font-size: clamp(54px, 16.5vw, 78px);
     line-height: 0.82;
+  }
+
+  .utsav-backdrop {
+    object-position: 67% center;
+  }
+
+  .utsav-image-shade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(253, 251, 247, 0.68) 0%,
+        rgba(253, 251, 247, 0.15) 34%,
+        rgba(253, 251, 247, 0.72) 75%,
+        rgba(253, 251, 247, 0.95) 100%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(253, 251, 247, 0.94) 0%,
+        rgba(253, 251, 247, 0.67) 58%,
+        rgba(253, 251, 247, 0.15) 100%
+      );
   }
 
   .hero-intro {
@@ -1296,11 +1369,12 @@ footer {
 
   .hero-actions {
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
   }
 
   .trust-note {
-    text-align: center;
+    text-align: left;
   }
 
   .diya {

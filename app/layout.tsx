@@ -20,9 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("host") || "www.samavet.in";
   const protocol = host.includes("localhost") ? "http" : "https";
   const base = new URL(`${protocol}://${host}`);
-  const title = "SAMAVET — India's Community Technology Platform";
+  const title = "SAMAVET — Digitizing Ganesh Utsav 2026";
   const description =
-    "Technology for trusts, temples, Ganesh mandals, NGOs and social organisations—digital receipts, live analytics, streaming and media.";
+    "A connected digital platform for Ganesh mandals, devotees, donations, live darshan and every moment of Ganesh Utsav 2026.";
 
   return {
     metadataBase: base,

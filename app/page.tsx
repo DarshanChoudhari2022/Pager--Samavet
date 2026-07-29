@@ -181,21 +181,24 @@ export default function Home() {
           },
         });
         hero
-          .to(".door-left", { xPercent: -100, ease: "none" }, 0)
-          .to(".door-right", { xPercent: 100, ease: "none" }, 0)
+          .to(
+            ".utsav-backdrop",
+            { scale: 1.13, xPercent: -2.5, ease: "none" },
+            0,
+          )
           .fromTo(
             ".hero-copy",
-            { opacity: 0, y: 36, scale: 0.97 },
-            { opacity: 1, y: 0, scale: 1, ease: "power2.out" },
-            0.12,
+            { opacity: 1, y: 0 },
+            { opacity: 0, y: -90, ease: "power2.in" },
+            0.48,
           )
           .fromTo(
             ".hero-ambient",
-            { opacity: 0 },
-            { opacity: 1, duration: 0.35 },
-            0.16,
+            { opacity: 0.25 },
+            { opacity: 0.82, duration: 0.45 },
+            0,
           )
-          .to(".door-label", { opacity: 0 }, 0);
+          .to(".scroll-cue", { opacity: 0, y: 20 }, 0.3);
 
         gsap.utils.toArray("[data-speed]").forEach((element) => {
           const speed = Number((element as HTMLElement).dataset.speed || 0.4);
@@ -294,9 +297,12 @@ export default function Home() {
   return (
     <main>
       <nav className="topbar" aria-label="Primary navigation">
-        <a className="brand" href="#top" aria-label="SAMAVET home">
-          <span className="brand-mark">S</span>
-          <span>SAMAVET</span>
+        <a className="top-logo-link" href="#top" aria-label="SAMAVET home">
+          <img
+            className="top-logo"
+            src="/assets/samavet-attached-logo.jpeg"
+            alt="SAMAVET community tree logo"
+          />
         </a>
         <div className="nav-links">
           <a href="#platform">Platform</a>
@@ -310,6 +316,12 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-reveal">
+          <img
+            className="utsav-backdrop"
+            src="/assets/ganesh-utsav-2026.jpeg"
+            alt="Ganesh Utsav procession with devotees welcoming Lord Ganesha"
+          />
+          <div className="utsav-image-shade" aria-hidden="true" />
           <div className="rangoli rangoli-one" />
           <div className="rangoli rangoli-two" />
           <div className="hero-ambient" aria-hidden="true">
@@ -330,24 +342,24 @@ export default function Home() {
             ))}
           </div>
           <div className="hero-copy">
-            <p className="eyebrow">
-              India&apos;s community technology platform
-            </p>
+            <p className="eyebrow">SAMAVET presents</p>
             <h1>
-              Technology that
+              Digitizing
               <br />
-              brings us <em>together.</em>
+              Ganesh Utsav
+              <br />
+              <em>2026.</em>
             </h1>
             <p className="hero-intro">
-              One thoughtful digital platform for trusts, temples, mandals,
-              NGOs and the people who make communities thrive.
+              One connected digital platform for mandals, devotees, donations,
+              live darshan and every moment that brings the utsav alive.
             </p>
             <div className="hero-actions">
               <a className="primary-button" href="#platform">
-                Explore the platform <span>↓</span>
+                Explore the Utsav platform <span>↓</span>
               </a>
               <span className="trust-note">
-                <b>Built in India.</b> Made for belonging.
+                <b>Ganpati Bappa Morya.</b> Tradition, amplified.
               </span>
             </div>
           </div>
@@ -355,14 +367,6 @@ export default function Home() {
             <span />
             Scroll to enter
           </div>
-        </div>
-
-        <div className="temple-door door-left" />
-        <div className="temple-door door-right" />
-        <div className="door-label">
-          <span>॥</span>
-          <b>SAMAVET</b>
-          <small>Scroll to open</small>
         </div>
       </section>
 
