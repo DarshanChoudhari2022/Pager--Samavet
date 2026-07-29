@@ -54,9 +54,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script src="https://cdn.tailwindcss.com" async />
-      </head>
       <body className={`${display.variable} ${sans.variable}`}>{children}</body>
     </html>
   );

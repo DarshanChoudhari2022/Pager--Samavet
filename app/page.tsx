@@ -175,30 +175,81 @@ export default function Home() {
           scrollTrigger: {
             trigger: ".hero",
             start: "top top",
-            end: "+=130%",
+            end: "+=160%",
             scrub: 1,
             pin: true,
           },
         });
+        const loaderLogo = document.querySelector<HTMLElement>(
+          ".hero-logo-loader-wrap",
+        );
+        const headerLogo = document.querySelector<HTMLElement>(".top-logo");
+
+        if (loaderLogo && headerLogo) {
+          const loaderRect = loaderLogo.getBoundingClientRect();
+          const headerRect = headerLogo.getBoundingClientRect();
+          const logoScale = headerRect.width / loaderRect.width;
+          const logoX =
+            headerRect.left +
+            headerRect.width / 2 -
+            (loaderRect.left + loaderRect.width / 2);
+          const logoY =
+            headerRect.top +
+            headerRect.height / 2 -
+            (loaderRect.top + loaderRect.height / 2);
+
+          hero
+            .to(
+              ".hero-logo-loader-wrap",
+              {
+                x: logoX,
+                y: logoY,
+                scale: logoScale,
+                ease: "power2.inOut",
+                duration: 0.3,
+              },
+              0,
+            )
+            .to(".top-logo", { opacity: 1, duration: 0.06 }, 0.25)
+            .to(
+              ".hero-logo-loader-wrap",
+              { opacity: 0, duration: 0.06 },
+              0.26,
+            );
+        }
+
         hero
-          .to(
-            ".utsav-backdrop",
-            { scale: 1.13, xPercent: -2.5, ease: "none" },
-            0,
+          .fromTo(
+            ".hero-kicker",
+            { opacity: 0, y: 18 },
+            { opacity: 1, y: 0, duration: 0.12, ease: "power2.out" },
+            0.26,
           )
           .fromTo(
-            ".hero-copy",
-            { opacity: 1, y: 0 },
-            { opacity: 0, y: -90, ease: "power2.in" },
-            0.48,
+            ".hero-title-line > span",
+            { yPercent: 115, opacity: 0 },
+            {
+              yPercent: 0,
+              opacity: 1,
+              duration: 0.22,
+              stagger: 0.1,
+              ease: "power3.out",
+            },
+            0.32,
           )
           .fromTo(
-            ".hero-ambient",
-            { opacity: 0.25 },
-            { opacity: 0.82, duration: 0.45 },
-            0,
+            ".hero-intro",
+            { opacity: 0, y: 24 },
+            { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
+            0.64,
           )
-          .to(".scroll-cue", { opacity: 0, y: 20 }, 0.3);
+          .fromTo(
+            ".hero-actions",
+            { opacity: 0, y: 24 },
+            { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
+            0.76,
+          )
+          .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.08);
 
         gsap.utils.toArray("[data-speed]").forEach((element) => {
           const speed = Number((element as HTMLElement).dataset.speed || 0.4);
@@ -322,33 +373,26 @@ export default function Home() {
             alt="Ganesh Utsav procession with devotees welcoming Lord Ganesha"
           />
           <div className="utsav-image-shade" aria-hidden="true" />
-          <div className="rangoli rangoli-one" />
-          <div className="rangoli rangoli-two" />
-          <div className="hero-ambient" aria-hidden="true">
-            <span className="diya diya-left">
-              <i />
-            </span>
-            <span className="diya diya-right">
-              <i />
-            </span>
-            <span className="smoke smoke-one" />
-            <span className="smoke smoke-two" />
-            {Array.from({ length: 12 }).map((_, index) => (
-              <span
-                className={`petal petal-${index + 1}`}
-                data-speed={(0.35 + (index % 4) * 0.18).toFixed(2)}
-                key={index}
-              />
-            ))}
+          <div className="hero-logo-loader-wrap" aria-hidden="true">
+            <span className="logo-loader-ring" />
+            <img
+              className="hero-logo-loader"
+              src="/assets/samavet-attached-logo.jpeg"
+              alt=""
+            />
           </div>
           <div className="hero-copy">
-            <p className="eyebrow">SAMAVET presents</p>
-            <h1>
-              Digitizing
-              <br />
-              Ganesh Utsav
-              <br />
-              <em>2026.</em>
+            <p className="eyebrow hero-kicker">SAMAVET presents</p>
+            <h1 className="hero-title">
+              <span className="hero-title-line">
+                <span>Digitizing</span>
+              </span>
+              <span className="hero-title-line">
+                <span>Ganesh Utsav</span>
+              </span>
+              <span className="hero-title-line">
+                <span>2026.</span>
+              </span>
             </h1>
             <p className="hero-intro">
               One connected digital platform for mandals, devotees, donations,
