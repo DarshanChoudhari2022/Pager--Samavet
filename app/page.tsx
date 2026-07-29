@@ -52,6 +52,20 @@ const modules = [
       "Member-wise collection and pending-payment visibility",
       "Searchable records with instant WhatsApp sharing",
     ],
+    mr: {
+      title: "डिजिटल वर्गणी पावत्या",
+      tag: "ई-पावती",
+      copy: "आपल्या परिचित वर्गणी पावतीचे डिजिटल रूप तयार करा आणि प्रत्येक देणगीदाराला तीच ब्रँडेड पावती व्हॉट्सॲपवर पाठवा.",
+      headline: "प्रत्येक वर्गणीची तत्काळ नोंद आणि पावती.",
+      description:
+        "आपल्या मंडळाची सध्याची वर्गणी पावती आम्हाला पाठवा किंवा नवीन पावतीचे डिझाइन आमच्याकडून करून घ्या. मंजूर डिझाइन आम्ही SAMAVET मध्ये अपलोड करतो. सदस्याने देणगीदाराचे नाव, रक्कम आणि देयकाची माहिती एकदाच भरली की त्याच डिझाइनमधील पावती तयार होऊन थेट व्हॉट्सॲपवर पाठवली जाते.",
+      benefits: [
+        "सध्याच्या पावतीच्या डिझाइनसह सोपी सुरुवात",
+        "दुबार लेखन आणि हाताने नोंदवही ठेवण्याची गरज नाही",
+        "सदस्यनिहाय जमा आणि बाकी रकमेची स्पष्ट माहिती",
+        "शोधता येणाऱ्या नोंदी आणि तत्काळ व्हॉट्सॲप शेअरिंग",
+      ],
+    },
   },
   {
     number: "02",
@@ -68,6 +82,20 @@ const modules = [
       "Location-wise and member-wise insights",
       "Clear reports for post-event review",
     ],
+    mr: {
+      title: "उत्सव माहिती व विश्लेषण",
+      tag: "थेट विश्लेषण",
+      copy: "नोंदणी, उपस्थिती, वर्गणी आणि पोहोच यांची स्पष्ट माहिती एकाच ठिकाणी थेट पाहा.",
+      headline: "उत्सवातील प्रत्येक हालचाल थेट पाहा.",
+      description:
+        "नोंदणी, उपस्थिती, जमा रक्कम आणि उपक्रमांची माहिती एका स्पष्ट डॅशबोर्डवर पाहा. उत्सव सुरू असतानाच आयोजकांना परिस्थिती समजते, त्रुटी लवकर लक्षात येतात आणि योग्य निर्णय घेता येतात.",
+      benefits: [
+        "थेट उपस्थिती आणि नोंदणीचा आढावा",
+        "जमा, खर्च आणि शिल्लक रकमेचा सारांश",
+        "ठिकाणनिहाय आणि सदस्यनिहाय माहिती",
+        "उत्सवानंतरच्या परीक्षणासाठी स्पष्ट अहवाल",
+      ],
+    },
   },
   {
     number: "03",
@@ -84,6 +112,20 @@ const modules = [
       "A single viewing experience for remote devotees",
       "Recorded streams ready for future sharing",
     ],
+    mr: {
+      title: "२४×७ थेट प्रक्षेपण",
+      tag: "फेसबुक आणि यूट्यूब",
+      copy: "आरती, मिरवणूक आणि उत्सवातील प्रत्येक क्षण भाविकांपर्यंत कुठेही पोहोचवा.",
+      headline: "प्रत्येक पवित्र क्षण भाविकांच्या जवळ आणा.",
+      description:
+        "आरती, मिरवणूक, सांस्कृतिक कार्यक्रम आणि महत्त्वाच्या घोषणा फेसबुक व यूट्यूबवर थेट प्रसारित करा. मंडळाच्या स्वयंसेवकांवर तांत्रिक ताण न आणता SAMAVET नियोजन, वेळापत्रक आणि प्रसारण व्यवस्थापनात मदत करते.",
+      benefits: [
+        "फेसबुक आणि यूट्यूब थेट प्रक्षेपणासाठी मदत",
+        "कार्यक्रमाचे वेळापत्रक आणि प्रसारणाची पूर्वतयारी",
+        "दूरच्या भाविकांसाठी एकसंध दर्शन अनुभव",
+        "पुढे शेअर करण्यासाठी जतन केलेले प्रसारण",
+      ],
+    },
   },
   {
     number: "04",
@@ -100,11 +142,163 @@ const modules = [
       "Short-form clips for social platforms",
       "Publishing support for consistent reach",
     ],
+    mr: {
+      title: "पॉडकास्ट आणि मीडिया",
+      tag: "निर्मिती स्टुडिओ",
+      copy: "समुदायाच्या कथा, विचार आणि शिकवण प्रभावी डिजिटल माध्यमात सादर करा.",
+      headline: "समुदायाच्या कथांना दीर्घकाळ टिकणारा आवाज द्या.",
+      description:
+        "मुलाखती, उत्सवाच्या बातम्या आणि भक्तीपर संवाद यांना योग्य स्वरूप देणे, ध्वनिमुद्रण करणे आणि प्रकाशित करणे यासाठी आम्ही मदत करतो. तयार होणारे माध्यम आपल्या संस्थेची ओळख जपते आणि आजच्या डिजिटल चॅनेलसाठी तयार असते.",
+      benefits: [
+        "विषय नियोजन आणि निर्मितीसाठी मार्गदर्शन",
+        "ध्वनिमुद्रण, संपादन आणि स्वच्छ ऑडिओ",
+        "सोशल मीडियासाठी लघु व्हिडिओ क्लिप्स",
+        "सातत्यपूर्ण पोहोचेसाठी प्रकाशन सहाय्य",
+      ],
+    },
   },
 ];
 
+const homeText = {
+  en: {
+    services: "Services",
+    contact: "Contact",
+    portal: "Portal login",
+    heroKicker: "SAMAVET presents",
+    heroTitle: ["Digitizing", "Ganesh Utsav", "2026.."],
+    heroIntro:
+      "One connected digital platform for mandals, devotees, donations, live darshan and every moment that brings the utsav alive.",
+    explore: "Explore the Utsav platform",
+    trustStrong: "Ganpati Bappa Morya.",
+    trust: "Tradition, amplified.",
+    scroll: "Scroll to enter",
+    platformLabel: "One connected platform",
+    platformTitle: "Everything your community needs to move forward.",
+    platformIntro:
+      "Simple enough to begin today. Powerful enough to support your next ten years of growth.",
+    viewDetails: "View details",
+    talk: "Talk to our team",
+    template: "Template",
+    live: "LIVE",
+    metricLabels: ["participants", "live channels", "media stories", "active zones", "broadcast ready", "more reusable content"],
+    alongside: "Built alongside",
+    groups: ["Trusts", "Temples", "Ganesh Mandals", "NGOs", "Social Organisations"],
+    showcaseLabel: "A clearer view of your impact",
+    showcaseTitle: "One platform. Every meaningful moment.",
+    captions: [
+      "Understand your community",
+      "Stay connected, anywhere",
+      "Share every celebration",
+    ],
+    experience: "Experience the platform",
+    views: "03 views",
+    advantageCount: "02 — The SAMAVET advantage",
+    advantageLabel: "Less complexity. More community.",
+    advantageTitle: "Built for the way you actually work.",
+    without: "Without SAMAVET",
+    with: "With SAMAVET",
+    withoutItems: [
+      "Scattered spreadsheets and records",
+      "Manual receipts and follow-ups",
+      "Disconnected streaming tools",
+      "No single view of community impact",
+    ],
+    withItems: [
+      "One secure source of truth",
+      "Instant digital ePawati",
+      "Broadcast everywhere at once",
+      "Clear, live insights for every decision",
+    ],
+    built: "Built with communities in mind.",
+    powered: "Powered by BracketDex",
+  },
+  mr: {
+    services: "सेवा",
+    contact: "संपर्क",
+    portal: "पोर्टल लॉगिन",
+    heroKicker: "समवेत प्रस्तुत",
+    heroTitle: ["डिजिटल", "गणेशोत्सव", "२०२६.."],
+    heroIntro:
+      "मंडळे, भाविक, देणग्या, थेट दर्शन आणि उत्सवातील प्रत्येक क्षण यांना जोडणारे एक सर्वसमावेशक डिजिटल व्यासपीठ.",
+    explore: "उत्सव व्यासपीठ पाहा",
+    trustStrong: "गणपती बाप्पा मोरया.",
+    trust: "परंपरेला डिजिटल बळ.",
+    scroll: "पुढे पाहण्यासाठी स्क्रोल करा",
+    platformLabel: "एक जोडलेले व्यासपीठ",
+    platformTitle: "समुदायाच्या प्रगतीसाठी आवश्यक सर्व काही.",
+    platformIntro:
+      "आजपासून सुरू करण्याइतके सोपे आणि पुढील अनेक वर्षांच्या वाढीसाठी पुरेसे सक्षम.",
+    viewDetails: "सविस्तर माहिती",
+    talk: "आमच्या टीमशी संपर्क साधा",
+    template: "नमुना",
+    live: "थेट",
+    metricLabels: ["सहभागी", "थेट चॅनेल", "मीडिया कथा", "सक्रिय विभाग", "प्रसारणासाठी तयार", "पुन्हा वापरता येणारे अधिक साहित्य"],
+    alongside: "सोबत विकसित केलेले",
+    groups: ["विश्वस्त संस्था", "मंदिरे", "गणेश मंडळे", "स्वयंसेवी संस्था", "सामाजिक संस्था"],
+    showcaseLabel: "आपल्या कार्याचा स्पष्ट आढावा",
+    showcaseTitle: "एक व्यासपीठ. प्रत्येक महत्त्वाचा क्षण.",
+    captions: [
+      "आपला समुदाय समजून घ्या",
+      "कुठूनही सतत जोडलेले राहा",
+      "प्रत्येक उत्सव सर्वांपर्यंत पोहोचवा",
+    ],
+    experience: "व्यासपीठाचा अनुभव",
+    views: "०३ दृश्ये",
+    advantageCount: "०२ — SAMAVET चे फायदे",
+    advantageLabel: "कमी गुंतागुंत. अधिक समुदायभावना.",
+    advantageTitle: "आपल्या प्रत्यक्ष कार्यपद्धतीसाठी तयार केलेले.",
+    without: "SAMAVET शिवाय",
+    with: "SAMAVET सह",
+    withoutItems: [
+      "वेगवेगळ्या स्प्रेडशीट्स आणि विखुरलेल्या नोंदी",
+      "हाताने पावत्या आणि वारंवार पाठपुरावा",
+      "एकमेकांपासून वेगळी प्रसारण साधने",
+      "समुदायाच्या कामाचा एकत्रित आढावा नाही",
+    ],
+    withItems: [
+      "एक सुरक्षित आणि अधिकृत माहिती स्रोत",
+      "तत्काळ डिजिटल ई-पावती",
+      "एकाच वेळी सर्वत्र थेट प्रसारण",
+      "प्रत्येक निर्णयासाठी स्पष्ट आणि अद्ययावत माहिती",
+    ],
+    built: "समुदायाला केंद्रस्थानी ठेवून निर्मिती.",
+    powered: "BracketDex द्वारे समर्थित",
+  },
+};
+
 export default function Home() {
   const [activeModule, setActiveModule] = useState(0);
+  const [language, setLanguage] = useState<"en" | "mr">("en");
+  const t = homeText[language];
+  const localizedModules = modules.map((module) =>
+    language === "mr" ? { ...module, ...module.mr } : module,
+  );
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("samavet-language");
+    if (saved === "mr") setLanguage("mr");
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    const frame = window.requestAnimationFrame(() => window.ScrollTrigger?.refresh());
+    return () => window.cancelAnimationFrame(frame);
+  }, [language]);
+
+  const changeLanguage = (nextLanguage: "en" | "mr") => {
+    setLanguage(nextLanguage);
+    window.localStorage.setItem("samavet-language", nextLanguage);
+  };
+
+  const showModule = (index: number) => {
+    setActiveModule(index);
+    window.requestAnimationFrame(() => {
+      document.getElementById("service-detail")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  };
 
   useEffect(() => {
     let disposed = false;
@@ -322,7 +516,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <main className={language === "mr" ? "is-marathi" : ""} lang={language}>
       <nav className="topbar" aria-label="Primary navigation">
         <a className="top-brand" href="#top" aria-label="SAMAVET home">
           <span className="top-logo-link">
@@ -337,18 +531,34 @@ export default function Home() {
         <div className="nav-links">
           <a href="https://epawati.samavet.in/">ePawati</a>
           <span aria-hidden="true">/</span>
-          <a href="#platform">Services</a>
+          <a href="#platform">{t.services}</a>
           <span aria-hidden="true">/</span>
-          <a href="/contact">Contact</a>
+          <a href="/contact">{t.contact}</a>
         </div>
         <div className="nav-actions">
-          <span className="language-switcher">EN <i>/</i> मराठी</span>
+          <div className="language-switcher" aria-label="Choose language">
+            <button
+              type="button"
+              className={language === "en" ? "active" : ""}
+              onClick={() => changeLanguage("en")}
+            >
+              EN
+            </button>
+            <i>/</i>
+            <button
+              type="button"
+              className={language === "mr" ? "active" : ""}
+              onClick={() => changeLanguage("mr")}
+            >
+              मराठी
+            </button>
+          </div>
           <a
             className="nav-cta"
             href="https://epawati.samavet.in/"
             aria-label="Log in to the SAMAVET ePawati portal"
           >
-            Portal login
+            {t.portal}
           </a>
         </div>
       </nav>
@@ -369,34 +579,27 @@ export default function Home() {
             />
           </div>
           <div className="hero-copy">
-            <p className="eyebrow hero-kicker">SAMAVET presents</p>
+            <p className="eyebrow hero-kicker">{t.heroKicker}</p>
             <h1 className="hero-title">
-              <span className="hero-title-line">
-                <span>Digitizing</span>
-              </span>
-              <span className="hero-title-line">
-                <span>Ganesh Utsav</span>
-              </span>
-              <span className="hero-title-line">
-                <span>2026..</span>
-              </span>
+              {t.heroTitle.map((line) => (
+                <span className="hero-title-line" key={line}>
+                  <span>{line}</span>
+                </span>
+              ))}
             </h1>
-            <p className="hero-intro">
-              One connected digital platform for mandals, devotees, donations,
-              live darshan and every moment that brings the utsav alive.
-            </p>
+            <p className="hero-intro">{t.heroIntro}</p>
             <div className="hero-actions">
               <a className="primary-button" href="#platform">
-                Explore the Utsav platform <span>↓</span>
+                {t.explore} <span>↓</span>
               </a>
               <span className="trust-note">
-                <b>Ganpati Bappa Morya.</b> Tradition, amplified.
+                <b>{t.trustStrong}</b> {t.trust}
               </span>
             </div>
           </div>
           <div className="scroll-cue">
             <span />
-            Scroll to enter
+            {t.scroll}
           </div>
         </div>
       </section>
@@ -404,20 +607,13 @@ export default function Home() {
       <section className="platform-section" id="platform">
         <div className="section-heading">
           <div>
-            <p className="eyebrow">One connected platform</p>
-            <h2>
-              Everything your community
-              <br />
-              needs to <em>move forward.</em>
-            </h2>
+            <p className="eyebrow">{t.platformLabel}</p>
+            <h2>{t.platformTitle}</h2>
           </div>
-          <p>
-            Simple enough to begin today. Powerful enough to support your next
-            ten years of growth.
-          </p>
+          <p>{t.platformIntro}</p>
         </div>
         <div className="module-grid">
-          {modules.map((module, index) => (
+          {localizedModules.map((module, index) => (
             <article
               className={`module-card ${activeModule === index ? "active" : ""}`}
               key={module.number}
@@ -431,11 +627,11 @@ export default function Home() {
               <p>{module.copy}</p>
               <button
                 type="button"
-                onClick={() => setActiveModule(index)}
+                onClick={() => showModule(index)}
                 aria-controls="service-detail"
                 aria-expanded={activeModule === index}
               >
-                View details <span>↘</span>
+                {t.viewDetails} <span>↘</span>
               </button>
             </article>
           ))}
@@ -443,12 +639,12 @@ export default function Home() {
         <div className="service-detail" id="service-detail" aria-live="polite">
           <div className="service-detail-copy">
             <p className="service-detail-label">
-              {modules[activeModule].tag} · {modules[activeModule].number}
+              {localizedModules[activeModule].tag} · {localizedModules[activeModule].number}
             </p>
-            <h3>{modules[activeModule].headline}</h3>
-            <p>{modules[activeModule].description}</p>
+            <h3>{localizedModules[activeModule].headline}</h3>
+            <p>{localizedModules[activeModule].description}</p>
             <ul>
-              {modules[activeModule].benefits.map((benefit) => (
+              {localizedModules[activeModule].benefits.map((benefit) => (
                 <li key={benefit}>
                   <span>✓</span>
                   {benefit}
@@ -456,7 +652,7 @@ export default function Home() {
               ))}
             </ul>
             <a className="service-contact" href="/contact">
-              Talk to our team <span>↗</span>
+              {t.talk} <span>↗</span>
             </a>
           </div>
           {activeModule === 0 ? (
@@ -468,35 +664,35 @@ export default function Home() {
               ].map((src, index) => (
                 <figure key={src}>
                   <img src={src} alt={`Custom Vargani receipt template example ${index + 1}`} />
-                  <figcaption>Template {String(index + 1).padStart(2, "0")}</figcaption>
+                  <figcaption>{t.template} {String(index + 1).padStart(2, "0")}</figcaption>
                 </figure>
               ))}
             </div>
           ) : (
             <div className={`service-visual service-visual-${activeModule}`}>
               <div className="service-visual-top">
-                <span>{modules[activeModule].tag}</span>
-                <b>LIVE</b>
+                <span>{localizedModules[activeModule].tag}</span>
+                <b>{t.live}</b>
               </div>
               <div className="service-metrics">
                 <div>
                   <strong>{activeModule === 1 ? "1,284" : activeModule === 2 ? "2" : "24"}</strong>
                   <span>
                     {activeModule === 1
-                      ? "participants"
+                      ? t.metricLabels[0]
                       : activeModule === 2
-                        ? "live channels"
-                        : "media stories"}
+                        ? t.metricLabels[1]
+                        : t.metricLabels[2]}
                   </span>
                 </div>
                 <div>
-                  <strong>{activeModule === 1 ? "74%" : activeModule === 2 ? "LIVE" : "4×"}</strong>
+                  <strong>{activeModule === 1 ? "74%" : activeModule === 2 ? t.live : "4×"}</strong>
                   <span>
                     {activeModule === 1
-                      ? "active zones"
+                      ? t.metricLabels[3]
                       : activeModule === 2
-                        ? "broadcast ready"
-                        : "more reusable content"}
+                        ? t.metricLabels[4]
+                        : t.metricLabels[5]}
                   </span>
                 </div>
               </div>
@@ -511,24 +707,21 @@ export default function Home() {
           )}
         </div>
         <div className="who-row">
-          <span>Built alongside</span>
-          <b>Trusts</b>
-          <i>✦</i>
-          <b>Temples</b>
-          <i>✦</i>
-          <b>Ganesh Mandals</b>
-          <i>✦</i>
-          <b>NGOs</b>
-          <i>✦</i>
-          <b>Social Organisations</b>
+          <span>{t.alongside}</span>
+          {t.groups.map((group, index) => (
+            <span className="who-group" key={group}>
+              {index > 0 && <i>✦</i>}
+              <b>{group}</b>
+            </span>
+          ))}
         </div>
       </section>
 
       <section className="showcase-section" id="experience">
         <div className="showcase-wrap">
           <div className="showcase-copy">
-            <p className="eyebrow">A clearer view of your impact</p>
-            <h2>One platform. Every meaningful moment.</h2>
+            <p className="eyebrow">{t.showcaseLabel}</p>
+            <h2>{t.showcaseTitle}</h2>
           </div>
           <div className="gallery-stage">
             <figure className="mockup-card mock-card-left">
@@ -537,7 +730,7 @@ export default function Home() {
                 alt="Bronze analytics dashboard interface"
               />
               <figcaption>
-                <span>01</span> Understand your community
+                <span>01</span> {t.captions[0]}
               </figcaption>
             </figure>
             <figure className="mockup-card mock-card-center">
@@ -546,7 +739,7 @@ export default function Home() {
                 alt="SAMAVET mobile community platform"
               />
               <figcaption>
-                <span>02</span> Stay connected, anywhere
+                <span>02</span> {t.captions[1]}
               </figcaption>
             </figure>
             <figure className="mockup-card mock-card-right">
@@ -555,46 +748,40 @@ export default function Home() {
                 alt="Live streaming platform on tablet"
               />
               <figcaption>
-                <span>03</span> Share every celebration
+                <span>03</span> {t.captions[2]}
               </figcaption>
             </figure>
           </div>
           <div className="showcase-progress">
-            <span>Experience the platform</span>
+            <span>{t.experience}</span>
             <i />
-            <b>03 views</b>
+            <b>{t.views}</b>
           </div>
         </div>
       </section>
 
       <section className="advantage-section">
-        <div className="section-count">02 — The SAMAVET advantage</div>
+        <div className="section-count">{t.advantageCount}</div>
         <div className="advantage-layout">
           <div>
-            <p className="eyebrow">Less complexity. More community.</p>
-            <h2>
-              Built for the way
-              <br />
-              <em>you actually work.</em>
-            </h2>
+            <p className="eyebrow">{t.advantageLabel}</p>
+            <h2>{t.advantageTitle}</h2>
           </div>
           <div className="comparison">
             <div className="comparison-card muted">
-              <p>Without SAMAVET</p>
+              <p>{t.without}</p>
               <ul>
-                <li><span>×</span> Scattered spreadsheets and records</li>
-                <li><span>×</span> Manual receipts and follow-ups</li>
-                <li><span>×</span> Disconnected streaming tools</li>
-                <li><span>×</span> No single view of community impact</li>
+                {t.withoutItems.map((item) => (
+                  <li key={item}><span>×</span> {item}</li>
+                ))}
               </ul>
             </div>
             <div className="comparison-card bright">
-              <p>With SAMAVET</p>
+              <p>{t.with}</p>
               <ul>
-                <li><span>✓</span> One secure source of truth</li>
-                <li><span>✓</span> Instant digital ePawati</li>
-                <li><span>✓</span> Broadcast everywhere at once</li>
-                <li><span>✓</span> Clear, live insights for every decision</li>
+                {t.withItems.map((item) => (
+                  <li key={item}><span>✓</span> {item}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -615,13 +802,13 @@ export default function Home() {
         </div>
         <div className="footer-meta">
           <p>© 2026 Samavet.</p>
-          <p>Built with communities in mind.</p>
+          <p>{t.built}</p>
           <a
             href="https://www.bracketdex.com/"
             target="_blank"
             rel="noreferrer"
           >
-            Powered by BracketDex
+            {t.powered}
           </a>
         </div>
       </footer>

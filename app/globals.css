@@ -156,15 +156,74 @@ a {
 }
 
 .language-switcher {
+  display: inline-flex;
+  align-items: center;
   color: rgba(44, 24, 16, 0.68);
   font-size: 12px;
   white-space: nowrap;
+}
+
+.language-switcher button {
+  padding: 4px 2px;
+  border: 0;
+  color: rgba(44, 24, 16, 0.48);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.language-switcher button.active {
+  color: #214b31;
+  font-weight: 800;
 }
 
 .language-switcher i {
   padding: 0 4px;
   color: rgba(139, 69, 44, 0.35);
   font-style: normal;
+}
+
+.is-marathi,
+.is-marathi button,
+.is-marathi a {
+  font-family: var(--font-devanagari), var(--font-sans), sans-serif;
+}
+
+.is-marathi h1,
+.is-marathi h2,
+.is-marathi h3,
+.is-marathi .hero-title,
+.is-marathi .footer-wordmark,
+.is-marathi .top-brand-name {
+  font-family: var(--font-devanagari), var(--font-display), serif;
+}
+
+.is-marathi h1,
+.is-marathi h2,
+.is-marathi h3,
+.is-marathi p,
+.is-marathi li,
+.is-marathi a,
+.is-marathi button {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.is-marathi .hero-title {
+  letter-spacing: -0.015em;
+  line-height: 1.22;
+}
+
+.is-marathi .hero-title-line {
+  padding-bottom: 0.12em;
+}
+
+.is-marathi .section-heading h2,
+.is-marathi .advantage-layout h2,
+.is-marathi .showcase-copy h2,
+.is-marathi .contact-intro h1 {
+  letter-spacing: -0.015em;
+  line-height: 1.16;
 }
 
 .nav-cta {
@@ -1059,8 +1118,8 @@ h2 em {
 
 .vargani-gallery img {
   width: 100%;
-  aspect-ratio: 1.22 / 1;
-  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
 }
 
 .vargani-gallery figcaption {
@@ -1159,13 +1218,24 @@ h2 em {
   font-size: 20px;
 }
 
-.who-row > span {
+.who-row > span:first-child {
   font-family: var(--font-sans), sans-serif;
   color: rgba(44, 24, 16, 0.42);
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.who-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--brown);
+  font-family: var(--font-display), serif;
+  font-size: 20px;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
 .who-row i {
@@ -1708,6 +1778,26 @@ footer {
   transform: none;
 }
 
+@media (max-width: 1180px) {
+  .module-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-detail,
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero {
+    padding-top: 170px;
+  }
+
+  .vargani-gallery {
+    width: min(100%, 860px);
+    justify-self: center;
+  }
+}
+
 @media (max-width: 960px) {
   .topbar {
     grid-template-columns: 1fr auto;
@@ -1802,19 +1892,26 @@ footer {
     gap: 8px;
   }
 
-  .top-brand-name,
-  .language-switcher {
+  .top-brand-name {
     display: none;
   }
 
   .nav-actions {
-    gap: 0;
+    gap: 8px;
+  }
+
+  .language-switcher {
+    font-size: 10px;
+  }
+
+  .language-switcher i {
+    padding: 0 2px;
   }
 
   .nav-cta {
     min-height: 42px;
-    padding: 0 16px;
-    font-size: 12px;
+    padding: 0 12px;
+    font-size: 10px;
   }
 
   .hero {
@@ -1834,7 +1931,7 @@ footer {
 
   .hero-title {
     width: min(92vw, 470px);
-    font-size: clamp(38px, 11vw, 56px);
+    font-size: clamp(35px, 10.5vw, 54px);
     letter-spacing: -0.02em;
     line-height: 1.14;
   }
@@ -1921,15 +2018,47 @@ footer {
   }
 
   .vargani-gallery {
-    grid-template-columns: 1fr;
+    display: grid;
+    width: calc(100vw - 44px);
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(78vw, 330px);
+    justify-content: start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
   }
 
+  .vargani-gallery figure,
   .vargani-gallery figure:nth-child(2) {
     transform: none;
+    scroll-snap-align: start;
   }
 
   .vargani-gallery img {
-    aspect-ratio: 1.7 / 1;
+    aspect-ratio: 16 / 9;
+  }
+
+  .service-metrics {
+    gap: 18px;
+  }
+
+  .service-metrics > div + div {
+    padding-left: 18px;
+  }
+
+  .service-metrics strong {
+    font-size: clamp(42px, 14vw, 64px);
+  }
+
+  .is-marathi .hero-title {
+    font-size: clamp(32px, 9.6vw, 48px);
+    line-height: 1.28;
+  }
+
+  .is-marathi .hero-intro {
+    font-size: 13px;
+    line-height: 1.75;
   }
 
   .contact-hero {
