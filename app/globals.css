@@ -2020,6 +2020,21 @@ footer {
 }
 
 @media (max-width: 680px) {
+  .hero-title,
+  .hero-kicker {
+    color: #682e20;
+    text-shadow: 0 5px 16px rgba(62, 22, 12, 0.18);
+  }
+
+  .hero-brand-logo,
+  .top-logo {
+    filter:
+      brightness(0.76)
+      contrast(1.22)
+      saturate(1.12)
+      drop-shadow(0 7px 12px rgba(62, 22, 12, 0.18));
+  }
+
   .topbar {
     top: 8px;
     width: calc(100% - 16px);
@@ -2113,6 +2128,7 @@ footer {
   .hero-intro {
     width: min(92vw, 480px);
     margin: 25px 0;
+    color: rgba(44, 24, 16, 0.88);
     font-size: 12px;
   }
 
@@ -2123,7 +2139,12 @@ footer {
   }
 
   .trust-note {
+    color: rgba(44, 24, 16, 0.76);
     text-align: left;
+  }
+
+  .scroll-cue {
+    color: rgba(44, 24, 16, 0.72);
   }
 
   .diya {
