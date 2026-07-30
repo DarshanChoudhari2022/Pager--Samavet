@@ -1567,10 +1567,10 @@ footer {
   display: block;
   color: #f8ead4;
   font-family: var(--font-sans), sans-serif;
-  font-size: clamp(104px, 17vw, 270px);
+  font-size: clamp(72px, 8vw, 124px);
   font-weight: 800;
-  letter-spacing: -0.085em;
-  line-height: 0.72;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
   text-align: center;
   white-space: nowrap;
 }
@@ -2134,8 +2134,8 @@ footer {
   }
 
   .footer-wordmark {
-    font-size: clamp(58px, 22vw, 120px);
-    letter-spacing: -0.075em;
+    font-size: clamp(46px, 16vw, 72px);
+    letter-spacing: -0.045em;
   }
 
   .footer-watermark {
