@@ -179,6 +179,8 @@ const homeText = {
     viewDetails: "View details",
     talk: "Talk to our team",
     template: "Template",
+    epawatiGraphic: "Your receipt. Digitized by ePawati.",
+    epawatiFlow: ["Your mandal design", "Digital ePawati", "Sent on WhatsApp"],
     live: "LIVE",
     metricLabels: ["participants", "live channels", "media stories", "active zones", "broadcast ready", "more reusable content"],
     alongside: "Built alongside",
@@ -231,6 +233,8 @@ const homeText = {
     viewDetails: "सविस्तर माहिती",
     talk: "आमच्या टीमशी संपर्क साधा",
     template: "नमुना",
+    epawatiGraphic: "आपली पावती. ePawati द्वारे डिजिटल.",
+    epawatiFlow: ["मंडळाचे डिझाइन", "डिजिटल ई-पावती", "व्हॉट्सॲपवर पाठवा"],
     live: "थेट",
     metricLabels: ["सहभागी", "थेट चॅनेल", "मीडिया कथा", "सक्रिय विभाग", "प्रसारणासाठी तयार", "पुन्हा वापरता येणारे अधिक साहित्य"],
     alongside: "सोबत विकसित केलेले",
@@ -267,12 +271,14 @@ const homeText = {
 };
 
 export default function Home() {
-  const [activeModule, setActiveModule] = useState(0);
+  const [activeModule, setActiveModule] = useState<number | null>(null);
   const [language, setLanguage] = useState<"en" | "mr">("en");
   const t = homeText[language];
   const localizedModules = modules.map((module) =>
     language === "mr" ? { ...module, ...module.mr } : module,
   );
+  const selectedModule =
+    activeModule === null ? null : localizedModules[activeModule];
 
   useEffect(() => {
     const saved = window.localStorage.getItem("samavet-language");
@@ -292,13 +298,18 @@ export default function Home() {
 
   const showModule = (index: number) => {
     setActiveModule(index);
-    window.requestAnimationFrame(() => {
+  };
+
+  useEffect(() => {
+    if (activeModule === null) return;
+    const frame = window.requestAnimationFrame(() => {
       document.getElementById("service-detail")?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     });
-  };
+    return () => window.cancelAnimationFrame(frame);
+  }, [activeModule]);
 
   useEffect(() => {
     let disposed = false;
@@ -636,76 +647,101 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <div className="service-detail" id="service-detail" aria-live="polite">
-          <div className="service-detail-copy">
-            <p className="service-detail-label">
-              {localizedModules[activeModule].tag} · {localizedModules[activeModule].number}
-            </p>
-            <h3>{localizedModules[activeModule].headline}</h3>
-            <p>{localizedModules[activeModule].description}</p>
-            <ul>
-              {localizedModules[activeModule].benefits.map((benefit) => (
-                <li key={benefit}>
-                  <span>✓</span>
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-            <a className="service-contact" href="/contact">
-              {t.talk} <span>↗</span>
-            </a>
+        {selectedModule && activeModule !== null && (
+          <div className="service-detail" id="service-detail" aria-live="polite">
+            <div className="service-detail-copy">
+              <p className="service-detail-label">
+                {selectedModule.tag} · {selectedModule.number}
+              </p>
+              <h3>{selectedModule.headline}</h3>
+              <p>{selectedModule.description}</p>
+              <ul>
+                {selectedModule.benefits.map((benefit) => (
+                  <li key={benefit}>
+                    <span>✓</span>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+              <a className="service-contact" href="/contact">
+                {t.talk} <span>↗</span>
+              </a>
+            </div>
+            {activeModule === 0 ? (
+              <div className="epawati-graphic" aria-label="ePawati digital receipt workflow">
+                <div className="epawati-heading">
+                  <span>ePawati</span>
+                  <strong>{t.epawatiGraphic}</strong>
+                </div>
+                <div className="epawati-collage">
+                  <img
+                    className="epawati-slip epawati-slip-left"
+                    src="/assets/vargani-template-1.jpeg"
+                    alt="Mandal Vargani receipt design"
+                  />
+                  <img
+                    className="epawati-slip epawati-slip-center"
+                    src="/assets/vargani-template-2.jpeg"
+                    alt="Digitized Ganesh Mandal Vargani receipt"
+                  />
+                  <img
+                    className="epawati-slip epawati-slip-right"
+                    src="/assets/vargani-template-3.jpeg"
+                    alt="Custom digital Vargani receipt"
+                  />
+                  <div className="epawati-receipt-chip">
+                    <b>✓</b>
+                    <span>WhatsApp</span>
+                  </div>
+                </div>
+                <div className="epawati-flow">
+                  {t.epawatiFlow.map((step, index) => (
+                    <span key={step}>
+                      <b>{String(index + 1).padStart(2, "0")}</b>
+                      {step}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className={`service-visual service-visual-${activeModule}`}>
+                <div className="service-visual-top">
+                  <span>{selectedModule.tag}</span>
+                  <b>{t.live}</b>
+                </div>
+                <div className="service-metrics">
+                  <div>
+                    <strong>{activeModule === 1 ? "1,284" : activeModule === 2 ? "2" : "24"}</strong>
+                    <span>
+                      {activeModule === 1
+                        ? t.metricLabels[0]
+                        : activeModule === 2
+                          ? t.metricLabels[1]
+                          : t.metricLabels[2]}
+                    </span>
+                  </div>
+                  <div>
+                    <strong>{activeModule === 1 ? "74%" : activeModule === 2 ? t.live : "4×"}</strong>
+                    <span>
+                      {activeModule === 1
+                        ? t.metricLabels[3]
+                        : activeModule === 2
+                          ? t.metricLabels[4]
+                          : t.metricLabels[5]}
+                    </span>
+                  </div>
+                </div>
+                <div className="service-bars" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                </div>
+              </div>
+            )}
           </div>
-          {activeModule === 0 ? (
-            <div className="vargani-gallery" aria-label="Vargani slip template examples">
-              {[
-                "/assets/vargani-template-1.jpeg",
-                "/assets/vargani-template-2.jpeg",
-                "/assets/vargani-template-3.jpeg",
-              ].map((src, index) => (
-                <figure key={src}>
-                  <img src={src} alt={`Custom Vargani receipt template example ${index + 1}`} />
-                  <figcaption>{t.template} {String(index + 1).padStart(2, "0")}</figcaption>
-                </figure>
-              ))}
-            </div>
-          ) : (
-            <div className={`service-visual service-visual-${activeModule}`}>
-              <div className="service-visual-top">
-                <span>{localizedModules[activeModule].tag}</span>
-                <b>{t.live}</b>
-              </div>
-              <div className="service-metrics">
-                <div>
-                  <strong>{activeModule === 1 ? "1,284" : activeModule === 2 ? "2" : "24"}</strong>
-                  <span>
-                    {activeModule === 1
-                      ? t.metricLabels[0]
-                      : activeModule === 2
-                        ? t.metricLabels[1]
-                        : t.metricLabels[2]}
-                  </span>
-                </div>
-                <div>
-                  <strong>{activeModule === 1 ? "74%" : activeModule === 2 ? t.live : "4×"}</strong>
-                  <span>
-                    {activeModule === 1
-                      ? t.metricLabels[3]
-                      : activeModule === 2
-                        ? t.metricLabels[4]
-                        : t.metricLabels[5]}
-                  </span>
-                </div>
-              </div>
-              <div className="service-bars" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-              </div>
-            </div>
-          )}
-        </div>
+        )}
         <div className="who-row">
           <span>{t.alongside}</span>
           {t.groups.map((group, index) => (

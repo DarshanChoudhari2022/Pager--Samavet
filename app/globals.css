@@ -1037,6 +1037,7 @@ h2 em {
   padding: clamp(40px, 6vw, 84px);
   color: #fff7e8;
   background: #204b31;
+  animation: service-detail-in 0.45s ease both;
 }
 
 .service-detail-copy {
@@ -1129,6 +1130,146 @@ h2 em {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.epawati-graphic {
+  align-self: center;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 42px);
+  color: var(--brown);
+  background:
+    radial-gradient(circle at 82% 15%, rgba(224, 155, 65, 0.22), transparent 30%),
+    #fbf1df;
+  box-shadow: 24px 24px 0 rgba(8, 35, 20, 0.2);
+}
+
+.epawati-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(108, 64, 39, 0.2);
+}
+
+.epawati-heading > span {
+  color: var(--copper);
+  font-family: var(--font-display), serif;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.8;
+}
+
+.epawati-heading strong {
+  max-width: 230px;
+  color: rgba(44, 24, 16, 0.65);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.epawati-collage {
+  position: relative;
+  height: clamp(230px, 25vw, 350px);
+  margin: 26px 0;
+}
+
+.epawati-slip {
+  position: absolute;
+  width: 54%;
+  aspect-ratio: 16 / 9;
+  border: 5px solid #fffaf0;
+  object-fit: cover;
+  box-shadow: 0 18px 38px rgba(55, 29, 17, 0.22);
+}
+
+.epawati-slip-left {
+  z-index: 1;
+  top: 21%;
+  left: 0;
+  transform: rotate(-5deg);
+}
+
+.epawati-slip-center {
+  z-index: 3;
+  top: 4%;
+  left: 23%;
+  transform: rotate(1deg);
+}
+
+.epawati-slip-right {
+  z-index: 2;
+  top: 24%;
+  right: 0;
+  transform: rotate(5deg);
+}
+
+.epawati-receipt-chip {
+  position: absolute;
+  z-index: 4;
+  right: 4%;
+  bottom: 3%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  color: #fff;
+  background: #1c8f4e;
+  box-shadow: 0 8px 22px rgba(28, 143, 78, 0.28);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.epawati-receipt-chip b {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 50%;
+  color: #1c8f4e;
+  background: #fff;
+}
+
+.epawati-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(108, 64, 39, 0.2);
+  border-left: 1px solid rgba(108, 64, 39, 0.2);
+}
+
+.epawati-flow span {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  border-right: 1px solid rgba(108, 64, 39, 0.2);
+  border-bottom: 1px solid rgba(108, 64, 39, 0.2);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.epawati-flow b {
+  color: var(--copper);
+  font-size: 8px;
+}
+
+@keyframes service-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .service-visual {
@@ -2037,6 +2178,40 @@ footer {
 
   .vargani-gallery img {
     aspect-ratio: 16 / 9;
+  }
+
+  .epawati-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .epawati-heading strong {
+    max-width: none;
+    text-align: left;
+  }
+
+  .epawati-collage {
+    height: 230px;
+  }
+
+  .epawati-slip {
+    width: 72%;
+  }
+
+  .epawati-slip-left {
+    top: 28%;
+  }
+
+  .epawati-slip-center {
+    left: 14%;
+  }
+
+  .epawati-slip-right {
+    top: 32%;
+  }
+
+  .epawati-flow {
+    grid-template-columns: 1fr;
   }
 
   .service-metrics {
