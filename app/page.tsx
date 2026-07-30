@@ -2,6 +2,20 @@
 
 import { useEffect, useState } from "react";
 
+interface GsapTimeline {
+  to: (
+    target: unknown,
+    vars: Record<string, unknown>,
+    position?: number | string,
+  ) => GsapTimeline;
+  fromTo: (
+    target: unknown,
+    fromVars: Record<string, unknown>,
+    toVars: Record<string, unknown>,
+    position?: number | string,
+  ) => GsapTimeline;
+}
+
 declare global {
   interface Window {
     gsap?: {
@@ -12,19 +26,7 @@ declare global {
         fromVars: Record<string, unknown>,
         toVars: Record<string, unknown>,
       ) => unknown;
-      timeline: (vars?: Record<string, unknown>) => {
-        to: (
-          target: unknown,
-          vars: Record<string, unknown>,
-          position?: number | string,
-        ) => unknown;
-        fromTo: (
-          target: unknown,
-          fromVars: Record<string, unknown>,
-          toVars: Record<string, unknown>,
-          position?: number | string,
-        ) => unknown;
-      };
+      timeline: (vars?: Record<string, unknown>) => GsapTimeline;
       utils: {
         toArray: (selector: string) => Element[];
       };
