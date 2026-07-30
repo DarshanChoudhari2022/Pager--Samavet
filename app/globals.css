@@ -2083,7 +2083,7 @@ footer {
   .hero-copy {
     width: calc(100vw - 44px);
     margin-left: 22px;
-    padding-top: 76px;
+    padding-top: clamp(248px, calc(56.25vw + 28px), 390px);
   }
 
   h1 {
@@ -2099,30 +2099,29 @@ footer {
   }
 
   .hero-brand-logo-wrap {
-    top: 27vh;
-    left: calc(50vw - 110px);
-    width: 220px;
+    top: clamp(78px, 13vw, 112px);
+    left: calc(50% - clamp(71px, 20vw, 90px));
+    width: clamp(142px, 40vw, 180px);
   }
 
   .utsav-backdrop {
-    object-position: 64% top;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center top;
+    background: var(--cream);
     filter: none;
   }
 
   .utsav-image-shade {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(253, 251, 247, 0.1) 0%,
-        rgba(253, 251, 247, 0.02) 48%,
-        rgba(253, 251, 247, 0.38) 100%
-      ),
-      linear-gradient(
-        90deg,
-        rgba(253, 251, 247, 0.76) 0%,
-        rgba(253, 251, 247, 0.3) 45%,
-        rgba(253, 251, 247, 0.03) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(253, 251, 247, 0) 0,
+      rgba(253, 251, 247, 0.04) 42vw,
+      rgba(253, 251, 247, 0.94) 57vw,
+      var(--cream) 68vw,
+      var(--cream) 100%
+    );
   }
 
   .hero-intro {
