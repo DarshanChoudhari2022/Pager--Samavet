@@ -285,6 +285,9 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  transform: translateZ(0);
   will-change: transform;
 }
 
@@ -2056,6 +2059,7 @@ footer {
   }
 
   .hero {
+    height: 100svh;
     min-height: 620px;
   }
 
@@ -2084,23 +2088,23 @@ footer {
   }
 
   .utsav-backdrop {
-    object-position: 67% center;
+    object-position: 64% center;
+    filter: none;
   }
 
   .utsav-image-shade {
     background:
       linear-gradient(
         180deg,
-        rgba(253, 251, 247, 0.68) 0%,
-        rgba(253, 251, 247, 0.15) 34%,
-        rgba(253, 251, 247, 0.72) 75%,
-        rgba(253, 251, 247, 0.95) 100%
+        rgba(253, 251, 247, 0.1) 0%,
+        rgba(253, 251, 247, 0.02) 48%,
+        rgba(253, 251, 247, 0.38) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(253, 251, 247, 0.94) 0%,
-        rgba(253, 251, 247, 0.67) 58%,
-        rgba(253, 251, 247, 0.15) 100%
+        rgba(253, 251, 247, 0.76) 0%,
+        rgba(253, 251, 247, 0.3) 45%,
+        rgba(253, 251, 247, 0.03) 100%
       );
   }
 
@@ -2139,14 +2143,31 @@ footer {
     font-size: clamp(48px, 15vw, 72px);
   }
 
-  .module-grid,
   .comparison,
   .pricing-grid {
     grid-template-columns: 1fr;
   }
 
+  .module-grid {
+    width: calc(100vw - 44px);
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(82vw, 330px);
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    border: 0;
+    padding: 2px 0 18px;
+  }
+
   .module-card {
-    min-height: 340px;
+    min-height: 350px;
+    border: 1px solid var(--line);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .service-detail {
