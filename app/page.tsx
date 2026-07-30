@@ -782,8 +782,8 @@ export default function Home() {
           <div className="gallery-stage">
             <figure className="mockup-card mock-card-left">
               <img
-                src="/assets/analytics-dashboard.png"
-                alt="Bronze analytics dashboard interface"
+                src="/assets/samavet-members-vargani-dashboard.png"
+                alt="SAMAVET members and Vargani management dashboard"
               />
               <figcaption>
                 <span>01</span> {t.captions[0]}
@@ -791,8 +791,8 @@ export default function Home() {
             </figure>
             <figure className="mockup-card mock-card-center">
               <img
-                src="/assets/samavet-phone.png"
-                alt="SAMAVET mobile community platform"
+                src="/assets/samavet-vargani-overview.png"
+                alt="SAMAVET Vargani slips collection overview"
               />
               <figcaption>
                 <span>02</span> {t.captions[1]}
@@ -800,8 +800,8 @@ export default function Home() {
             </figure>
             <figure className="mockup-card mock-card-right">
               <img
-                src="/assets/livestream-tablet.png"
-                alt="Live streaming platform on tablet"
+                src="/assets/samavet-vargani-records.png"
+                alt="SAMAVET detailed Vargani receipt records"
               />
               <figcaption>
                 <span>03</span> {t.captions[2]}
