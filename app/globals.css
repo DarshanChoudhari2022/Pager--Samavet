@@ -2090,9 +2090,9 @@ footer {
   }
 
   .utsav-backdrop {
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: contain;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
     object-position: center top;
     background: var(--cream);
     filter: none;
@@ -2101,11 +2101,10 @@ footer {
   .utsav-image-shade {
     background: linear-gradient(
       180deg,
-      rgba(253, 251, 247, 0) 0,
-      rgba(253, 251, 247, 0.04) 42vw,
-      rgba(253, 251, 247, 0.94) 57vw,
-      var(--cream) 68vw,
-      var(--cream) 100%
+      rgba(253, 251, 247, 0) 0%,
+      rgba(253, 251, 247, 0.02) 58%,
+      rgba(253, 251, 247, 0.2) 78%,
+      rgba(253, 251, 247, 0.72) 100%
     );
   }
 

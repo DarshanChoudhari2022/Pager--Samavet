@@ -592,11 +592,17 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-reveal">
-          <img
-            className="utsav-backdrop"
-            src="/assets/ganesh-utsav-2026.jpeg"
-            alt="Ganesh Utsav procession with devotees welcoming Lord Ganesha"
-          />
+          <picture>
+            <source
+              media="(max-width: 720px)"
+              srcSet="/assets/ganesh-utsav-2026-mobile.png"
+            />
+            <img
+              className="utsav-backdrop"
+              src="/assets/ganesh-utsav-2026.jpeg"
+              alt="Ganesh Utsav procession with devotees welcoming Lord Ganesha"
+            />
+          </picture>
           <div className="utsav-image-shade" aria-hidden="true" />
           <div className="hero-brand-logo-wrap" aria-hidden="true">
             <img
