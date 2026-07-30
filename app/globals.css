@@ -1413,10 +1413,11 @@ h2 em {
 
 .showcase-copy {
   position: absolute;
-  top: 12vh;
+  top: clamp(48px, 8vh, 84px);
   right: 0;
   left: 0;
   z-index: 2;
+  padding: 0 clamp(28px, 5vw, 96px);
   text-align: center;
 }
 
@@ -1425,19 +1426,22 @@ h2 em {
 }
 
 .showcase-copy h2 {
-  margin: 0;
+  width: min(1480px, 90vw);
+  margin: 0 auto;
   font-family: var(--font-display), serif;
-  font-size: clamp(54px, 6.5vw, 98px);
+  font-size: clamp(48px, 5vw, 80px);
+  line-height: 1.04;
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .gallery-stage {
   position: absolute;
-  top: 25vh;
+  top: clamp(225px, 32vh, 330px);
   left: 50%;
   width: min(1160px, 90vw);
-  height: 58vh;
+  height: 54vh;
   transform: translateX(-50%);
   perspective: 1200px;
   transform-style: preserve-3d;
@@ -2050,7 +2054,13 @@ footer {
   }
 
   .gallery-stage {
+    top: clamp(230px, 34vh, 320px);
     width: 96vw;
+  }
+
+  .showcase-copy h2 {
+    width: min(900px, 90vw);
+    font-size: clamp(46px, 7vw, 66px);
   }
 
   .mockup-card {
@@ -2376,18 +2386,20 @@ footer {
   }
 
   .showcase-copy {
-    top: 14vh;
-    padding: 0 20px;
+    top: clamp(64px, 10vh, 92px);
+    padding: 0 22px;
   }
 
   .showcase-copy h2 {
-    font-size: 48px;
-    line-height: 0.95;
+    width: 100%;
+    font-size: clamp(38px, 11.5vw, 48px);
+    line-height: 1.03;
+    letter-spacing: -0.025em;
   }
 
   .gallery-stage {
-    top: 32vh;
-    height: 50vh;
+    top: clamp(285px, 39vh, 360px);
+    height: 46vh;
   }
 
   .mockup-card {
