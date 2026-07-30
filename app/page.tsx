@@ -393,7 +393,7 @@ export default function Home() {
                 scale: logoScale,
                 rotate: -1,
                 ease: "power3.inOut",
-                duration: 0.58,
+                duration: 0.46,
               },
               0,
             )
@@ -408,19 +408,33 @@ export default function Home() {
                 opacity: 1,
                 y: 0,
                 pointerEvents: "auto",
-                duration: 0.16,
+                duration: 0.14,
                 ease: "power2.out",
               },
-              0.5,
+              0.46,
             )
             .to(
               ".hero-brand-logo-wrap",
               { opacity: 0, duration: 0.08 },
-              0.55,
+              0.5,
             );
         }
 
         hero
+          .fromTo(
+            ".hero-kicker",
+            {
+              opacity: 0,
+              y: 14,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.14,
+              ease: "power2.out",
+            },
+            0.5,
+          )
           .fromTo(
             ".hero-title",
             {
@@ -433,19 +447,19 @@ export default function Home() {
               duration: 0.42,
               ease: "power2.out",
             },
-            0.14,
+            0.64,
           )
           .fromTo(
             ".hero-intro",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.53,
+            0.9,
           )
           .fromTo(
             ".hero-actions",
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" },
-            0.62,
+            0.98,
           )
           .to(".scroll-cue", { opacity: 0, y: 20, duration: 0.12 }, 0.06);
 
