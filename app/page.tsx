@@ -644,22 +644,26 @@ export default function Home() {
             <article
               className={`module-card ${activeModule === index ? "active" : ""}`}
               key={module.number}
+              role="button"
+              tabIndex={0}
+              aria-controls="service-detail"
+              aria-expanded={activeModule === index}
+              aria-labelledby={`module-title-${module.number}`}
+              onClick={() => showModule(index)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  showModule(index);
+                }
+              }}
             >
               <div className="module-top">
                 <span>{module.number}</span>
                 <i>{module.icon}</i>
               </div>
               <p className="module-tag">{module.tag}</p>
-              <h3>{module.title}</h3>
+              <h3 id={`module-title-${module.number}`}>{module.title}</h3>
               <p>{module.copy}</p>
-              <button
-                type="button"
-                onClick={() => showModule(index)}
-                aria-controls="service-detail"
-                aria-expanded={activeModule === index}
-              >
-                {t.viewDetails} <span>↘</span>
-              </button>
             </article>
           ))}
         </div>
