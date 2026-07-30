@@ -2141,8 +2141,8 @@ footer {
   }
 
   .hero-copy {
-    width: calc(100vw - 44px);
-    margin-left: 22px;
+    width: calc(100vw - 40px);
+    margin-left: 20px;
     padding-top: clamp(188px, 51vw, 230px);
   }
 
@@ -2152,11 +2152,14 @@ footer {
   }
 
   .hero-title {
-    width: min(92vw, 470px);
-    font-size: clamp(35px, 10.5vw, 54px);
+    width: min(90vw, 430px);
+    font-size: clamp(32px, 9.4vw, 46px);
     letter-spacing: -0.02em;
-    line-height: 1.14;
-    text-shadow: 0 1px 0 rgba(253, 251, 247, 0.72);
+    line-height: 1.17;
+    text-shadow:
+      0 1px 0 rgba(253, 251, 247, 0.92),
+      0 0 18px rgba(253, 251, 247, 0.92),
+      0 5px 16px rgba(62, 22, 12, 0.14);
   }
 
   .hero-brand-logo-wrap {
@@ -2176,12 +2179,19 @@ footer {
 
   .utsav-image-shade {
     background:
+      radial-gradient(
+        ellipse 92% 48% at 0% 52%,
+        rgba(253, 251, 247, 0.98) 0%,
+        rgba(253, 251, 247, 0.94) 38%,
+        rgba(253, 251, 247, 0.72) 64%,
+        rgba(253, 251, 247, 0.08) 100%
+      ),
       linear-gradient(
         90deg,
-        rgba(253, 251, 247, 0.94) 0%,
-        rgba(253, 251, 247, 0.82) 24%,
-        rgba(253, 251, 247, 0.46) 52%,
-        rgba(253, 251, 247, 0.08) 76%,
+        rgba(253, 251, 247, 0.96) 0%,
+        rgba(253, 251, 247, 0.88) 30%,
+        rgba(253, 251, 247, 0.58) 58%,
+        rgba(253, 251, 247, 0.1) 82%,
         rgba(253, 251, 247, 0) 100%
       ),
       linear-gradient(
@@ -2194,10 +2204,11 @@ footer {
   }
 
   .hero-intro {
-    width: min(92vw, 480px);
+    width: min(88vw, 430px);
     margin: 25px 0;
-    color: rgba(44, 24, 16, 0.88);
+    color: rgba(44, 24, 16, 0.94);
     font-size: 12px;
+    text-shadow: 0 0 14px rgba(253, 251, 247, 0.96);
   }
 
   .hero-actions {
