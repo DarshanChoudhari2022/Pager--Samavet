@@ -1693,7 +1693,9 @@ footer {
   padding: 74px 5vw 30px;
   overflow: hidden;
   color: var(--cream);
-  background: var(--brown);
+  background:
+    radial-gradient(circle at 50% 58%, rgba(197, 155, 39, 0.1), transparent 34%),
+    #43261d;
 }
 
 .footer-cta {
@@ -1742,20 +1744,19 @@ footer {
   position: relative;
   display: flex;
   min-height: 430px;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  gap: 18px;
 }
 
 .footer-watermark {
-  position: absolute;
-  top: 44%;
-  left: 50%;
-  width: clamp(290px, 34vw, 470px);
-  max-height: 82%;
+  position: relative;
+  width: clamp(210px, 24vw, 330px);
+  max-height: 290px;
   object-fit: contain;
-  opacity: 0.14;
-  filter: grayscale(1) sepia(0.2) brightness(1.55);
-  transform: translate(-50%, -50%);
+  opacity: 0.42;
+  filter: grayscale(1) sepia(0.3) brightness(1.85) contrast(0.92);
   pointer-events: none;
 }
 
@@ -1765,10 +1766,10 @@ footer {
   display: block;
   color: #f8ead4;
   font-family: var(--font-sans), sans-serif;
-  font-size: clamp(72px, 8vw, 124px);
+  font-size: clamp(48px, 5vw, 76px);
   font-weight: 800;
-  letter-spacing: -0.055em;
-  line-height: 0.9;
+  letter-spacing: -0.04em;
+  line-height: 1;
   text-align: center;
   white-space: nowrap;
 }
@@ -2447,16 +2448,17 @@ footer {
 
   .footer-signature {
     min-height: 340px;
+    gap: 14px;
   }
 
   .footer-wordmark {
-    font-size: clamp(46px, 16vw, 72px);
+    font-size: clamp(38px, 12vw, 56px);
     letter-spacing: -0.045em;
   }
 
   .footer-watermark {
-    top: 43%;
-    width: min(74vw, 330px);
+    width: min(58vw, 240px);
+    max-height: 210px;
   }
 
   .footer-meta {
