@@ -158,7 +158,11 @@ a {
 .language-switcher {
   display: inline-flex;
   align-items: center;
+  padding: 4px 8px;
+  border: 1px solid rgba(164, 93, 59, 0.18);
+  border-radius: 999px;
   color: rgba(44, 24, 16, 0.68);
+  background: rgba(255, 255, 255, 0.36);
   font-size: 12px;
   white-space: nowrap;
 }
@@ -234,7 +238,8 @@ a {
   padding: 0 22px;
   border: 1px solid var(--logo-copper);
   border-radius: 999px;
-  color: var(--brown);
+  color: var(--cream);
+  background: var(--logo-copper);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0;
@@ -243,7 +248,7 @@ a {
 }
 
 .nav-cta:hover {
-  background: var(--logo-copper);
+  background: var(--brown);
   color: var(--cream);
 }
 
@@ -442,22 +447,56 @@ h2 em {
   margin-top: 38px;
 }
 
+.hero-cta-group {
+  display: grid;
+  gap: 10px;
+}
+
 .primary-button,
 .footer-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 54px;
-  padding: 0 25px;
+  min-height: 60px;
+  padding: 0 30px;
   border-radius: 999px;
   background: var(--copper);
   color: var(--cream);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   transition:
     transform 0.25s ease,
     background 0.25s ease;
+}
+
+.secondary-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border: 1px solid rgba(122, 62, 42, 0.45);
+  border-radius: 999px;
+  color: var(--logo-copper);
+  background: rgba(253, 251, 247, 0.42);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.secondary-button span {
+  margin-left: 18px;
+}
+
+.secondary-button:hover {
+  color: var(--cream);
+  background: var(--brown);
+  transform: translateY(-2px);
 }
 
 .primary-button:hover,
@@ -548,6 +587,8 @@ h2 em {
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.22em;
+  line-height: 1.5;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -911,7 +952,7 @@ h2 em {
 
 .platform-section,
 .pricing-section {
-  padding: 130px 6vw;
+  padding: 170px 6vw 150px;
   background: var(--cream);
 }
 
@@ -1338,40 +1379,20 @@ h2 em {
 .service-bars i:nth-child(5) { height: 61%; }
 
 .who-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 64px 0 0;
-  font-family: var(--font-display), serif;
-  font-size: 20px;
-}
-
-.who-row > span:first-child {
-  font-family: var(--font-sans), sans-serif;
-  color: rgba(44, 24, 16, 0.42);
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.who-group {
-  display: inline-flex;
-  align-items: center;
-  gap: 22px;
+  margin-top: 72px;
+  padding: 26px 32px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   color: var(--brown);
-  font-family: var(--font-display), serif;
-  font-size: 20px;
-  letter-spacing: normal;
-  text-transform: none;
+  background: rgba(243, 228, 204, 0.44);
+  text-align: center;
 }
 
-.who-row i {
-  color: var(--gold);
-  font-size: 10px;
-  font-style: normal;
+.who-row p {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: clamp(18px, 1.8vw, 27px);
+  line-height: 1.5;
 }
 
 .showcase-section {
@@ -1406,8 +1427,8 @@ h2 em {
 .showcase-copy h2 {
   margin: 0;
   font-family: var(--font-display), serif;
-  font-size: clamp(40px, 5.3vw, 78px);
-  font-weight: 500;
+  font-size: clamp(54px, 6.5vw, 98px);
+  font-weight: 600;
   letter-spacing: -0.04em;
 }
 
@@ -1478,7 +1499,7 @@ h2 em {
   bottom: 28px;
   left: 6vw;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 20px;
   color: rgba(253, 251, 247, 0.48);
@@ -1494,7 +1515,7 @@ h2 em {
 }
 
 .advantage-section {
-  padding: 120px 6vw 150px;
+  padding: 180px 6vw 170px;
   color: var(--cream);
   background: var(--copper);
 }
@@ -1671,10 +1692,52 @@ footer {
   background: var(--brown);
 }
 
+.footer-cta {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto;
+  align-items: center;
+  gap: 50px;
+  padding: 0 1vw 44px;
+  border-bottom: 1px solid rgba(248, 234, 212, 0.22);
+}
+
+.footer-cta h2 {
+  max-width: 950px;
+  margin: 0;
+  color: #f8ead4;
+  font-size: clamp(38px, 4.5vw, 72px);
+  line-height: 0.98;
+}
+
+.footer-cta > div {
+  display: grid;
+  justify-items: end;
+  gap: 16px;
+}
+
+.footer-email {
+  color: rgba(248, 234, 212, 0.8);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-cta .footer-button {
+  color: var(--brown);
+  background: #f8ead4;
+}
+
+.footer-cta .footer-button:hover {
+  color: var(--cream);
+  background: var(--copper);
+}
+
 .footer-signature {
   position: relative;
   display: flex;
-  min-height: 505px;
+  min-height: 430px;
   align-items: flex-end;
   justify-content: center;
 }
@@ -2047,6 +2110,7 @@ footer {
   }
 
   .language-switcher {
+    padding: 3px 5px;
     font-size: 10px;
   }
 
@@ -2131,13 +2195,24 @@ footer {
     gap: 16px;
   }
 
+  .hero-cta-group {
+    width: min(100%, 320px);
+  }
+
+  .hero-cta-group .primary-button,
+  .hero-cta-group .secondary-button {
+    width: 100%;
+  }
+
   .trust-note {
     color: rgba(44, 24, 16, 0.76);
     text-align: left;
   }
 
   .scroll-cue {
+    width: calc(100% - 44px);
     color: rgba(44, 24, 16, 0.72);
+    letter-spacing: 0.14em;
   }
 
   .diya {
@@ -2295,7 +2370,9 @@ footer {
   }
 
   .who-row {
-    justify-content: flex-start;
+    margin-top: 52px;
+    padding: 22px 18px;
+    text-align: left;
   }
 
   .showcase-copy {
@@ -2304,7 +2381,7 @@ footer {
   }
 
   .showcase-copy h2 {
-    font-size: 42px;
+    font-size: 48px;
     line-height: 0.95;
   }
 
@@ -2341,8 +2418,23 @@ footer {
     padding-left: 22px;
   }
 
+  .footer-cta {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 0 0 42px;
+  }
+
+  .footer-cta h2 {
+    font-size: clamp(38px, 11vw, 54px);
+    line-height: 1.04;
+  }
+
+  .footer-cta > div {
+    justify-items: start;
+  }
+
   .footer-signature {
-    min-height: 390px;
+    min-height: 340px;
   }
 
   .footer-wordmark {

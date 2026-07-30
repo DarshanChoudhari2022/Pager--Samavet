@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const contactText = {
   en: {
+    platformNav: "Platform",
     services: "Services",
     contact: "Contact",
     portal: "Portal login",
@@ -21,6 +22,7 @@ const contactText = {
     powered: "Powered by BracketDex",
   },
   mr: {
+    platformNav: "प्लॅटफॉर्म",
     services: "सेवा",
     contact: "संपर्क",
     portal: "पोर्टल लॉगिन",
@@ -82,6 +84,8 @@ export default function ContactPage() {
           <span className="top-brand-name">SAMAVET</span>
         </a>
         <div className="nav-links">
+          <a href="/#experience">{t.platformNav}</a>
+          <span aria-hidden="true">/</span>
           <a href="https://epawati.samavet.in/">ePawati</a>
           <span aria-hidden="true">/</span>
           <a href="/#platform">{t.services}</a>

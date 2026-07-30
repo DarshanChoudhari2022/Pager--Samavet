@@ -43,7 +43,7 @@ const modules = [
     number: "01",
     title: "Digital Vargani Slips",
     tag: "ePawati",
-    copy: "Create your familiar Vargani slip digitally and send the same branded receipt to every donor on WhatsApp.",
+    copy: "Create familiar Vargani slips digitally and send branded ePawati receipts to every donor on WhatsApp — instantly and securely.",
     icon: "₹",
     headline: "Every collection, recorded and shared instantly.",
     description:
@@ -57,7 +57,7 @@ const modules = [
     mr: {
       title: "डिजिटल वर्गणी पावत्या",
       tag: "ई-पावती",
-      copy: "आपल्या परिचित वर्गणी पावतीचे डिजिटल रूप तयार करा आणि प्रत्येक देणगीदाराला तीच ब्रँडेड पावती व्हॉट्सॲपवर पाठवा.",
+      copy: "परिचित वर्गणी पावत्या डिजिटल स्वरूपात तयार करा आणि प्रत्येक देणगीदाराला ब्रँडेड ई-पावती व्हॉट्सॲपवर तत्काळ व सुरक्षितपणे पाठवा.",
       headline: "प्रत्येक वर्गणीची तत्काळ नोंद आणि पावती.",
       description:
         "आपल्या मंडळाची सध्याची वर्गणी पावती आम्हाला पाठवा किंवा नवीन पावतीचे डिझाइन आमच्याकडून करून घ्या. मंजूर डिझाइन आम्ही SAMAVET मध्ये अपलोड करतो. सदस्याने देणगीदाराचे नाव, रक्कम आणि देयकाची माहिती एकदाच भरली की त्याच डिझाइनमधील पावती तयार होऊन थेट व्हॉट्सॲपवर पाठवली जाते.",
@@ -73,7 +73,7 @@ const modules = [
     number: "02",
     title: "Event Intelligence",
     tag: "Live Analytics",
-    copy: "See registrations, attendance, donations and reach through one clear real-time view.",
+    copy: "Track registrations, attendance, donations and digital reach in one clear, real-time dashboard.",
     icon: "↗",
     headline: "See the gathering as it happens.",
     description:
@@ -87,7 +87,7 @@ const modules = [
     mr: {
       title: "उत्सव माहिती व विश्लेषण",
       tag: "थेट विश्लेषण",
-      copy: "नोंदणी, उपस्थिती, वर्गणी आणि पोहोच यांची स्पष्ट माहिती एकाच ठिकाणी थेट पाहा.",
+      copy: "नोंदणी, उपस्थिती, देणग्या आणि डिजिटल पोहोच यांचा एका स्पष्ट, थेट डॅशबोर्डवर मागोवा घ्या.",
       headline: "उत्सवातील प्रत्येक हालचाल थेट पाहा.",
       description:
         "नोंदणी, उपस्थिती, जमा रक्कम आणि उपक्रमांची माहिती एका स्पष्ट डॅशबोर्डवर पाहा. उत्सव सुरू असतानाच आयोजकांना परिस्थिती समजते, त्रुटी लवकर लक्षात येतात आणि योग्य निर्णय घेता येतात.",
@@ -103,7 +103,7 @@ const modules = [
     number: "03",
     title: "24×7 Live Streaming",
     tag: "Facebook & YouTube",
-    copy: "Bring every aarti, utsav and community moment to devotees wherever they are.",
+    copy: "Broadcast aarti, utsav and community moments live on Facebook and YouTube — reaching devotees wherever they are.",
     icon: "◉",
     headline: "Bring every sacred moment closer.",
     description:
@@ -117,7 +117,7 @@ const modules = [
     mr: {
       title: "२४×७ थेट प्रक्षेपण",
       tag: "फेसबुक आणि यूट्यूब",
-      copy: "आरती, मिरवणूक आणि उत्सवातील प्रत्येक क्षण भाविकांपर्यंत कुठेही पोहोचवा.",
+      copy: "आरती, उत्सव आणि समुदायातील क्षण फेसबुक व यूट्यूबवर थेट प्रसारित करून भाविकांपर्यंत सर्वत्र पोहोचवा.",
       headline: "प्रत्येक पवित्र क्षण भाविकांच्या जवळ आणा.",
       description:
         "आरती, मिरवणूक, सांस्कृतिक कार्यक्रम आणि महत्त्वाच्या घोषणा फेसबुक व यूट्यूबवर थेट प्रसारित करा. मंडळाच्या स्वयंसेवकांवर तांत्रिक ताण न आणता SAMAVET नियोजन, वेळापत्रक आणि प्रसारण व्यवस्थापनात मदत करते.",
@@ -133,7 +133,7 @@ const modules = [
     number: "04",
     title: "Podcast & Media",
     tag: "Production Studio",
-    copy: "Turn stories, teachings and community voices into thoughtful, broadcast-ready media.",
+    copy: "Turn stories, teachings and community voices into thoughtful, broadcast-quality podcasts and videos.",
     icon: "≋",
     headline: "Give your community stories a lasting voice.",
     description:
@@ -147,7 +147,7 @@ const modules = [
     mr: {
       title: "पॉडकास्ट आणि मीडिया",
       tag: "निर्मिती स्टुडिओ",
-      copy: "समुदायाच्या कथा, विचार आणि शिकवण प्रभावी डिजिटल माध्यमात सादर करा.",
+      copy: "समुदायाच्या कथा, शिकवण आणि आवाज विचारपूर्वक, प्रसारण-दर्जाच्या पॉडकास्ट आणि व्हिडिओमध्ये सादर करा.",
       headline: "समुदायाच्या कथांना दीर्घकाळ टिकणारा आवाज द्या.",
       description:
         "मुलाखती, उत्सवाच्या बातम्या आणि भक्तीपर संवाद यांना योग्य स्वरूप देणे, ध्वनिमुद्रण करणे आणि प्रकाशित करणे यासाठी आम्ही मदत करतो. तयार होणारे माध्यम आपल्या संस्थेची ओळख जपते आणि आजच्या डिजिटल चॅनेलसाठी तयार असते.",
@@ -163,19 +163,20 @@ const modules = [
 
 const homeText = {
   en: {
+    platformNav: "Platform",
     services: "Services",
     contact: "Contact",
     portal: "Portal login",
     heroKicker: "SAMAVET presents",
-    heroTitle: ["Digitizing", "Ganesh Utsav", "2026.."],
+    heroTitle: ["Digitizing Ganesh Utsav 2026"],
     heroIntro:
-      "One connected digital platform for mandals, devotees, donations, live darshan and every moment that brings the utsav alive.",
+      "One connected digital platform for mandals, trusts and devotees — managing donations, live darshan and every moment of the utsav.",
     explore: "Explore the Utsav platform",
     trustStrong: "Ganpati Bappa Morya.",
-    trust: "Tradition, amplified.",
-    scroll: "Scroll to enter",
-    platformLabel: "One connected platform",
-    platformTitle: "Everything your community needs to move forward.",
+    trust: "Tradition, beautifully digitised.",
+    scroll: "Scroll to see how SAMAVET supports your utsav.",
+    platformLabel: "One connected platform.",
+    platformTitle: "Everything your community needs to run and grow your Ganesh Utsav.",
     platformIntro:
       "Simple enough to begin today. Powerful enough to support your next ten years of growth.",
     viewDetails: "View details",
@@ -185,51 +186,53 @@ const homeText = {
     epawatiFlow: ["Your mandal design", "Digital ePawati", "Sent on WhatsApp"],
     live: "LIVE",
     metricLabels: ["participants", "live channels", "media stories", "active zones", "broadcast ready", "more reusable content"],
-    alongside: "Built alongside",
-    groups: ["Trusts", "Temples", "Ganesh Mandals", "NGOs", "Social Organisations"],
+    alongside: "Built alongside trusts ✦ temples ✦ Ganesh mandals ✦ NGOs ✦ social organisations.",
     showcaseLabel: "A clearer view of your impact",
     showcaseTitle: "One platform. Every meaningful moment.",
     captions: [
-      "Understand your community",
-      "Stay connected, anywhere",
-      "Share every celebration",
+      "Understand your community at a glance.",
+      "Stay connected with every donor, from anywhere.",
+      "Share every celebration with devotees online.",
     ],
-    experience: "Experience the platform",
-    views: "03 views",
+    experience: "Experience the SAMAVET platform in action.",
     advantageCount: "02 — The SAMAVET advantage",
     advantageLabel: "Less complexity. More community.",
-    advantageTitle: "Built for the way you actually work.",
+    advantageTitle: "Built for the way your mandal actually works, every day.",
     without: "Without SAMAVET",
     with: "With SAMAVET",
     withoutItems: [
-      "Scattered spreadsheets and records",
-      "Manual receipts and follow-ups",
-      "Disconnected streaming tools",
-      "No single view of community impact",
+      "Scattered spreadsheets and records.",
+      "Manual receipts and follow-ups.",
+      "Disconnected streaming tools.",
+      "No single view of community impact.",
     ],
     withItems: [
-      "One secure source of truth",
-      "Instant digital ePawati",
-      "Broadcast everywhere at once",
-      "Clear, live insights for every decision",
+      "One secure source of truth for your data.",
+      "Instant digital ePawati receipts.",
+      "Broadcast everywhere at once from one place.",
+      "Clear, live insights for every decision.",
     ],
+    footerReady: "Ready to digitise your Ganesh Utsav? Contact us for a walkthrough.",
+    emailLabel: "contact@samavet.in",
+    requestDemo: "Request a demo",
     built: "Built with communities in mind.",
     powered: "Powered by BracketDex",
   },
   mr: {
+    platformNav: "प्लॅटफॉर्म",
     services: "सेवा",
     contact: "संपर्क",
     portal: "पोर्टल लॉगिन",
     heroKicker: "समवेत प्रस्तुत",
-    heroTitle: ["डिजिटल", "गणेशोत्सव", "२०२६.."],
+    heroTitle: ["गणेशोत्सव २०२६ चे डिजिटायझेशन"],
     heroIntro:
-      "मंडळे, भाविक, देणग्या, थेट दर्शन आणि उत्सवातील प्रत्येक क्षण यांना जोडणारे एक सर्वसमावेशक डिजिटल व्यासपीठ.",
+      "मंडळे, विश्वस्त संस्था आणि भाविकांसाठी एक जोडलेले डिजिटल व्यासपीठ — देणग्या, थेट दर्शन आणि उत्सवातील प्रत्येक क्षणाचे व्यवस्थापन करण्यासाठी.",
     explore: "उत्सव व्यासपीठ पाहा",
     trustStrong: "गणपती बाप्पा मोरया.",
-    trust: "परंपरेला डिजिटल बळ.",
-    scroll: "पुढे पाहण्यासाठी स्क्रोल करा",
-    platformLabel: "एक जोडलेले व्यासपीठ",
-    platformTitle: "समुदायाच्या प्रगतीसाठी आवश्यक सर्व काही.",
+    trust: "परंपरेचे सुंदर डिजिटायझेशन.",
+    scroll: "SAMAVET आपल्या उत्सवाला कशी साथ देते ते पाहण्यासाठी स्क्रोल करा.",
+    platformLabel: "एक जोडलेले व्यासपीठ.",
+    platformTitle: "आपला गणेशोत्सव चालवण्यासाठी आणि वाढवण्यासाठी आवश्यक सर्व काही.",
     platformIntro:
       "आजपासून सुरू करण्याइतके सोपे आणि पुढील अनेक वर्षांच्या वाढीसाठी पुरेसे सक्षम.",
     viewDetails: "सविस्तर माहिती",
@@ -239,34 +242,35 @@ const homeText = {
     epawatiFlow: ["मंडळाचे डिझाइन", "डिजिटल ई-पावती", "व्हॉट्सॲपवर पाठवा"],
     live: "थेट",
     metricLabels: ["सहभागी", "थेट चॅनेल", "मीडिया कथा", "सक्रिय विभाग", "प्रसारणासाठी तयार", "पुन्हा वापरता येणारे अधिक साहित्य"],
-    alongside: "सोबत विकसित केलेले",
-    groups: ["विश्वस्त संस्था", "मंदिरे", "गणेश मंडळे", "स्वयंसेवी संस्था", "सामाजिक संस्था"],
+    alongside: "विश्वस्त संस्था ✦ मंदिरे ✦ गणेश मंडळे ✦ स्वयंसेवी संस्था ✦ सामाजिक संस्थांसोबत विकसित.",
     showcaseLabel: "आपल्या कार्याचा स्पष्ट आढावा",
     showcaseTitle: "एक व्यासपीठ. प्रत्येक महत्त्वाचा क्षण.",
     captions: [
-      "आपला समुदाय समजून घ्या",
-      "कुठूनही सतत जोडलेले राहा",
-      "प्रत्येक उत्सव सर्वांपर्यंत पोहोचवा",
+      "आपल्या समुदायाचा एका नजरेत आढावा घ्या.",
+      "प्रत्येक देणगीदाराशी कुठूनही जोडलेले राहा.",
+      "प्रत्येक उत्सव भाविकांसोबत ऑनलाइन शेअर करा.",
     ],
-    experience: "व्यासपीठाचा अनुभव",
-    views: "०३ दृश्ये",
+    experience: "SAMAVET प्लॅटफॉर्म प्रत्यक्ष काम करताना पाहा.",
     advantageCount: "०२ — SAMAVET चे फायदे",
     advantageLabel: "कमी गुंतागुंत. अधिक समुदायभावना.",
-    advantageTitle: "आपल्या प्रत्यक्ष कार्यपद्धतीसाठी तयार केलेले.",
+    advantageTitle: "आपल्या मंडळाच्या रोजच्या प्रत्यक्ष कार्यपद्धतीसाठी तयार केलेले.",
     without: "SAMAVET शिवाय",
     with: "SAMAVET सह",
     withoutItems: [
-      "वेगवेगळ्या स्प्रेडशीट्स आणि विखुरलेल्या नोंदी",
-      "हाताने पावत्या आणि वारंवार पाठपुरावा",
-      "एकमेकांपासून वेगळी प्रसारण साधने",
-      "समुदायाच्या कामाचा एकत्रित आढावा नाही",
+      "वेगवेगळ्या स्प्रेडशीट्स आणि विखुरलेल्या नोंदी.",
+      "हाताने पावत्या आणि वारंवार पाठपुरावा.",
+      "एकमेकांपासून वेगळी प्रसारण साधने.",
+      "समुदायाच्या कामाचा एकत्रित आढावा नाही.",
     ],
     withItems: [
-      "एक सुरक्षित आणि अधिकृत माहिती स्रोत",
-      "तत्काळ डिजिटल ई-पावती",
-      "एकाच वेळी सर्वत्र थेट प्रसारण",
-      "प्रत्येक निर्णयासाठी स्पष्ट आणि अद्ययावत माहिती",
+      "आपल्या माहितीसाठी एक सुरक्षित आणि अधिकृत स्रोत.",
+      "तत्काळ डिजिटल ई-पावत्या.",
+      "एका ठिकाणाहून एकाच वेळी सर्वत्र प्रसारण.",
+      "प्रत्येक निर्णयासाठी स्पष्ट आणि थेट माहिती.",
     ],
+    footerReady: "आपला गणेशोत्सव डिजिटल करण्यासाठी तयार आहात? मार्गदर्शनासाठी आमच्याशी संपर्क साधा.",
+    emailLabel: "contact@samavet.in",
+    requestDemo: "डेमोची विनंती करा",
     built: "समुदायाला केंद्रस्थानी ठेवून निर्मिती.",
     powered: "BracketDex द्वारे समर्थित",
   },
@@ -556,6 +560,8 @@ export default function Home() {
           <span className="top-brand-name">SAMAVET</span>
         </a>
         <div className="nav-links">
+          <a href="#experience">{t.platformNav}</a>
+          <span aria-hidden="true">/</span>
           <a href="https://epawati.samavet.in/">ePawati</a>
           <span aria-hidden="true">/</span>
           <a href="#platform">{t.services}</a>
@@ -622,9 +628,14 @@ export default function Home() {
             </h1>
             <p className="hero-intro">{t.heroIntro}</p>
             <div className="hero-actions">
-              <a className="primary-button" href="#platform">
-                {t.explore} <span>↓</span>
-              </a>
+              <div className="hero-cta-group">
+                <a className="primary-button" href="#platform">
+                  {t.explore} <span>↓</span>
+                </a>
+                <a className="secondary-button" href="/contact">
+                  {t.talk} <span>↗</span>
+                </a>
+              </div>
               <span className="trust-note">
                 <b>{t.trustStrong}</b> {t.trust}
               </span>
@@ -768,14 +779,8 @@ export default function Home() {
             )}
           </div>
         )}
-        <div className="who-row">
-          <span>{t.alongside}</span>
-          {t.groups.map((group, index) => (
-            <span className="who-group" key={group}>
-              {index > 0 && <i>✦</i>}
-              <b>{group}</b>
-            </span>
-          ))}
+        <div className="who-row" aria-label={t.alongside}>
+          <p>{t.alongside}</p>
         </div>
       </section>
 
@@ -817,7 +822,6 @@ export default function Home() {
           <div className="showcase-progress">
             <span>{t.experience}</span>
             <i />
-            <b>{t.views}</b>
           </div>
         </div>
       </section>
@@ -851,6 +855,17 @@ export default function Home() {
       </section>
 
       <footer id="contact">
+        <div className="footer-cta">
+          <h2>{t.footerReady}</h2>
+          <div>
+            <a className="footer-email" href="mailto:contact@samavet.in">
+              {t.emailLabel}
+            </a>
+            <a className="footer-button" href="/contact">
+              {t.requestDemo} <span>↗</span>
+            </a>
+          </div>
+        </div>
         <div className="footer-signature">
           <img
             className="footer-watermark"
